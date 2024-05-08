@@ -28,11 +28,17 @@ import config as my_config
 YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
 
-RESUME_VIDEO_ID = ""  # resume downloading from this video, set empty string to start over
+RESUME_VIDEO_ID = (
+    ""  # resume downloading from this video, set empty string to start over
+)
 
 
 def fetch_video_ids(channel_id, search_start_time):  # load video ids in the channel
-    youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION, developerKey=my_config.DEVELOPER_KEY)
+    youtube = build(
+        YOUTUBE_API_SERVICE_NAME,
+        YOUTUBE_API_VERSION,
+        developerKey=my_config.DEVELOPER_KEY,
+    )
 
     start_time = search_start_time
     td = timedelta(days=15)
@@ -45,9 +51,17 @@ def fetch_video_ids(channel_id, search_start_time):  # load video ids in the cha
         start_string = str(start_time.isoformat()) + "Z"
         end_string = str(end_time.isoformat()) + "Z"
 
-        res = youtube.search().list(part="id", channelId=channel_id, maxResults="50",
-                                    publishedAfter=start_string,
-                                    publishedBefore=end_string).execute()
+        res = (
+            youtube.search()
+            .list(
+                part="id",
+                channelId=channel_id,
+                maxResults="50",
+                publishedAfter=start_string,
+                publishedBefore=end_string,
+            )
+            .execute()
+        )
         res_items += res["items"]
 
         while True:  # paging
@@ -55,13 +69,25 @@ def fetch_video_ids(channel_id, search_start_time):  # load video ids in the cha
                 break
 
             next_page_token = res["nextPageToken"]
-            res = youtube.search().list(part="id", channelId=channel_id, maxResults="50",
-                                        publishedAfter=start_string,
-                                        publishedBefore=end_string,
-                                        pageToken=next_page_token).execute()
+            res = (
+                youtube.search()
+                .list(
+                    part="id",
+                    channelId=channel_id,
+                    maxResults="50",
+                    publishedAfter=start_string,
+                    publishedBefore=end_string,
+                    pageToken=next_page_token,
+                )
+                .execute()
+            )
             res_items += res["items"]
 
-        print("    {} to {}, no of videos: {}".format(start_string, end_string, len(res_items)))
+        print(
+            "    {} to {}, no of videos: {}".format(
+                start_string, end_string, len(res_items)
+            )
+        )
 
         start_time = end_time
         end_time = start_time + td
@@ -82,7 +108,11 @@ def video_filter(info):
     exist_proper_format = False
     format_data = info.get("formats")
     for i in format_data:
-        if i.get("ext") == "mp4" and i.get("height") >= 720 and i.get("acodec") != "none":
+        if (
+            i.get("ext") == "mp4"
+            and i.get("height") >= 720
+            and i.get("acodec") != "none"
+        ):
             exist_proper_format = True
     if not exist_proper_format:
         passed = False
@@ -97,6 +127,7 @@ def video_filter(info):
             passed = False
 
     return passed
+
 
 def audio_filter(info):
     passed = True
@@ -122,7 +153,10 @@ def audio_filter(info):
 
 
 def download_subtitle(url, filename, postfix):
-    urllib.request.urlretrieve(url, "{}/{}-{}.vtt".format(my_config.SUBTITLE_PATH, filename, postfix))
+    urllib.request.urlretrieve(
+        url, "{}/{}-{}.vtt".format(my_config.SUBTITLE_PATH, filename, postfix)
+    )
+
 
 def parse_subtitle(subtitle):
     lines = subtitle.split("\n")
@@ -137,31 +171,42 @@ def parse_subtitle(subtitle):
                 if "-->" in lines[j]:
                     break
                 text += lines[j] + " "
-            parsed.append({"id": count, "speaker": "", "start": start, "end": end, "text": text})
+            parsed.append(
+                {"id": count, "speaker": "", "start": start, "end": end, "text": text}
+            )
             count += 1
     return {"data": parsed}
 
+
 def download_and_parse_subtitle(url, filename, postfix):
     download_subtitle(url, filename, postfix)
-    with open("{}/{}-{}.vtt".format(my_config.SUBTITLE_PATH, filename, postfix), "r") as file:
+    with open(
+        "{}/{}-{}.vtt".format(my_config.SUBTITLE_PATH, filename, postfix), "r"
+    ) as file:
         subtitle = file.read()
     # os.remove("{}/{}-{}.vtt".format(my_config.SUBTITLE_PATH, filename, postfix))
     parsed_subtitle = parse_subtitle(subtitle)
-    with open("{}/{}-{}.json".format(my_config.SUBTITLE_PATH, filename, postfix), "w") as file:
+    with open(
+        "{}/{}-{}.json".format(my_config.SUBTITLE_PATH, filename, postfix), "w"
+    ) as file:
         json.dump(parsed_subtitle, file, indent=2)
 
+
 def download(vid_list):
-    ydl_opts = {"format": "bestaudio/best",
-                "writesubtitles": True,
-                "writeautomaticsub": True,
-                # "outtmpl": f"{my_config.AUDIO_PATH}/%(id)s.%(ext)s",
-                "postprocessors": [{
-                    "key": "FFmpegExtractAudio",
-                    "preferredcodec": "mp3",
-                    "preferredquality": "192",
-                }],
-                }  # download options
-    
+    ydl_opts = {
+        "format": "bestaudio/best",
+        "writesubtitles": True,
+        "writeautomaticsub": True,
+        # "outtmpl": f"{my_config.AUDIO_PATH}/%(id)s.%(ext)s",
+        "postprocessors": [
+            {
+                "key": "FFmpegExtractAudio",
+                "preferredcodec": "mp3",
+                "preferredquality": "192",
+            }
+        ],
+    }  # download options
+
     language = my_config.LANG
 
     download_count = 0
@@ -183,10 +228,12 @@ def download(vid_list):
         # rename video (vid.mp4)
         # ydl_opts["outtmpl"] = my_config.VIDEO_PATH + "/" + vid_list[i] + ".mp4"
 
-        ydl_opts["outtmpl"] = my_config.AUDIO_PATH + "/" + vid_list[i] # + ".mp3"
+        ydl_opts["outtmpl"] = my_config.AUDIO_PATH + "/" + vid_list[i]  # + ".mp3"
 
         # check existing file
-        if os.path.exists(ydl_opts["outtmpl"]) and os.path.getsize(ydl_opts["outtmpl"]):  # existing and not empty
+        if os.path.exists(ydl_opts["outtmpl"]) and os.path.getsize(
+            ydl_opts["outtmpl"]
+        ):  # existing and not empty
             print("video file already exists ({})".format(vid_list[i]))
             continue
 
@@ -204,14 +251,17 @@ def download(vid_list):
                         sys.exit()
                     try:
                         ydl.download([url])
-                    except(youtube_dl.utils.DownloadError,
-                           youtube_dl.utils.ContentTooShortError,
-                           youtube_dl.utils.ExtractorError):
+                    except (
+                        youtube_dl.utils.DownloadError,
+                        youtube_dl.utils.ContentTooShortError,
+                        youtube_dl.utils.ExtractorError,
+                    ):
                         error_count += 1
                         print("  Retrying... (error count : {})\n".format(error_count))
                         traceback.print_exc()
                         continue
                     else:
+
                         def get_subtitle_url(subtitles, language, ext):
                             subtitles = subtitles.get(language)
                             url = None
@@ -221,13 +271,24 @@ def download(vid_list):
                                     break
                             return url
 
-                        if info.get("subtitles") != {} and (info.get("subtitles")).get(language) != None:
-                            sub_url = get_subtitle_url(info.get("subtitles"), language, "vtt")
-                            download_and_parse_subtitle(sub_url, vid, language) # download_subtitle(sub_url, vid, language)
+                        if (
+                            info.get("subtitles") != {}
+                            and (info.get("subtitles")).get(language) is not None
+                        ):
+                            sub_url = get_subtitle_url(
+                                info.get("subtitles"), language, "vtt"
+                            )
+                            download_and_parse_subtitle(
+                                sub_url, vid, language
+                            )  # download_subtitle(sub_url, vid, language)
                             sub_count += 1
                         elif info.get("automatic_captions") != {}:
-                            auto_sub_url = get_subtitle_url(info.get("automatic_captions"), language, "vtt")
-                            download_and_parse_subtitle(auto_sub_url, vid, language+"-auto") # download_subtitle(auto_sub_url, vid, language+"-auto")
+                            auto_sub_url = get_subtitle_url(
+                                info.get("automatic_captions"), language, "vtt"
+                            )
+                            download_and_parse_subtitle(
+                                auto_sub_url, vid, language + "-auto"
+                            )  # download_subtitle(auto_sub_url, vid, language+"-auto")
 
                         log.write("{} - downloaded\n".format(str(vid)))
                         download_count += 1
@@ -236,12 +297,16 @@ def download(vid_list):
                 log.write("{} - skipped\n".format(str(info.get("id"))))
                 skip_count += 1
 
+        assert len(os.listdir(my_config.AUDIO_PATH)) == len(
+            os.listdir(my_config.SUBTITLE_PATH)
+        ), "audio and subtitle files are not matched"
         print("  downloaded: {}, skipped: {}".format(download_count, skip_count))
 
     log.write("\nno of subtitles : {}\n".format(sub_count))
     log.write("downloaded: {}, skipped : {}\n".format(download_count, skip_count))
     log.close()
-    
+
+
 def create_path(path):
     if not os.path.exists(path):
         os.makedirs(path)
@@ -249,7 +314,7 @@ def create_path(path):
 
 def main():
     create_path(my_config.SUBTITLE_PATH)
-    create_path(my_config.AUDIO_PATH)  
+    create_path(my_config.AUDIO_PATH)
 
     os.chdir(my_config.DATA_PATH)
     vid_list = []
@@ -259,8 +324,10 @@ def main():
         rf = open("video_ids.txt", "r")
     except FileNotFoundError:
         print("fetching video ids...")
-        vid_list = fetch_video_ids(my_config.YOUTUBE_CHANNEL_ID, my_config.VIDEO_SEARCH_START_DATE)
-        # vid_list = ["54AYOd5S7uo", "Y8tlFLIjyMU"] 
+        vid_list = fetch_video_ids(
+            my_config.YOUTUBE_CHANNEL_ID, my_config.VIDEO_SEARCH_START_DATE
+        )
+        # vid_list = ["54AYOd5S7uo", "Y8tlFLIjyMU"]
         wf = open("video_ids.txt", "w")
         for j in vid_list:
             wf.write(str(j))
@@ -284,12 +351,13 @@ def main():
 
 
 def test_fetch():
-    vid_list = fetch_video_ids(my_config.YOUTUBE_CHANNEL_ID, my_config.VIDEO_SEARCH_START_DATE)
+    vid_list = fetch_video_ids(
+        my_config.YOUTUBE_CHANNEL_ID, my_config.VIDEO_SEARCH_START_DATE
+    )
     print(vid_list)
     print(len(vid_list))
+
 
 if __name__ == "__main__":
     # test_fetch()
     main()
-
-
