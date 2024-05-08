@@ -1,0 +1,26 @@
+[project]
+name = "asr"
+version = "0.1.0"
+description = "Automatic Speech Recognition"
+authors = [
+    {name = "Foxxy-HCMUS", email = "hoanganh6758@gmail.com"},
+]
+dependencies = [
+    "requests>=2.31.0",
+    "ipykernel>=6.29.4",
+    "yt-dlp @ https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz",
+    "youtube-transcript-api>=0.6.2",
+    "apiclient>=1.0.4",
+    "google-api-python-client>=2.128.0",
+]
+requires-python = ">=3.8"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
