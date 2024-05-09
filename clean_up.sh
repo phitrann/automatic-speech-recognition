@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm -rf data/audios data/subtitles
+rm -rf data/metadata data/raw

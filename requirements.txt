@@ -1,0 +1,16 @@
+--extra-index-url=https://download.pytorch.org/whl/cu116
+requests>=2.31.0
+ipykernel>=6.29.4
+yt-dlp @ https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
+apiclient>=1.0.4
+google-api-python-client>=2.128.0
+pydub>=0.25.1
+transformers>=4.40.2
+datasets>=2.19.1
+torch==1.13.1+cu116
+torchaudio==0.13.1
+torchvision==0.14.1+cu116
+mlflow==2.12.1
+accelerate
+# Editable Git install with no remote (asr==0.1.0)
+-e /mnt/net/i2x256-ai03/hotel/phit/personal/asr

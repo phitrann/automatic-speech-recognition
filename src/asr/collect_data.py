@@ -154,7 +154,7 @@ def audio_filter(info):
 
 def download_subtitle(url, filename, postfix):
     urllib.request.urlretrieve(
-        url, "{}/{}-{}.vtt".format(my_config.SUBTITLE_PATH, filename, postfix)
+        url, "{}/{}-{}.vtt".format(my_config.SUBTITLE_RAW_PATH, filename, postfix)
     )
 
 
@@ -181,13 +181,13 @@ def parse_subtitle(subtitle):
 def download_and_parse_subtitle(url, filename, postfix):
     download_subtitle(url, filename, postfix)
     with open(
-        "{}/{}-{}.vtt".format(my_config.SUBTITLE_PATH, filename, postfix), "r"
+        "{}/{}-{}.vtt".format(my_config.SUBTITLE_RAW_PATH, filename, postfix), "r"
     ) as file:
         subtitle = file.read()
-    # os.remove("{}/{}-{}.vtt".format(my_config.SUBTITLE_PATH, filename, postfix))
+    # os.remove("{}/{}-{}.vtt".format(my_config.SUBTITLE_RAW_PATH, filename, postfix))
     parsed_subtitle = parse_subtitle(subtitle)
     with open(
-        "{}/{}-{}.json".format(my_config.SUBTITLE_PATH, filename, postfix), "w"
+        "{}/{}-{}.json".format(my_config.SUBTITLE_RAW_PATH, filename, postfix), "w"
     ) as file:
         json.dump(parsed_subtitle, file, indent=2)
 
@@ -197,7 +197,7 @@ def download(vid_list):
         "format": "bestaudio/best",
         "writesubtitles": True,
         "writeautomaticsub": True,
-        # "outtmpl": f"{my_config.AUDIO_PATH}/%(id)s.%(ext)s",
+        # "outtmpl": f"{my_config.AUDIO_RAW_PATH}/%(id)s.%(ext)s",
         "postprocessors": [
             {
                 "key": "FFmpegExtractAudio",
@@ -228,7 +228,7 @@ def download(vid_list):
         # rename video (vid.mp4)
         # ydl_opts["outtmpl"] = my_config.VIDEO_PATH + "/" + vid_list[i] + ".mp4"
 
-        ydl_opts["outtmpl"] = my_config.AUDIO_PATH + "/" + vid_list[i]  # + ".mp3"
+        ydl_opts["outtmpl"] = my_config.AUDIO_RAW_PATH + "/" + vid_list[i]  # + ".mp3"
 
         # check existing file
         if os.path.exists(ydl_opts["outtmpl"]) and os.path.getsize(
@@ -243,7 +243,9 @@ def download(vid_list):
 
             info = ydl.extract_info(url, download=False)
             if audio_filter(info):
-                with open("metadata/{}.json".format(vid), "w", encoding="utf-8") as js:
+                with open(
+                    f"{my_config.METADATA_PATH}/{vid}.json", "w", encoding="utf-8"
+                ) as js:
                     json.dump(info, js, indent=4)
                 while 1:
                     if error_count == 3:
@@ -297,8 +299,8 @@ def download(vid_list):
                 log.write("{} - skipped\n".format(str(info.get("id"))))
                 skip_count += 1
 
-        assert len(os.listdir(my_config.AUDIO_PATH)) == len(
-            os.listdir(my_config.SUBTITLE_PATH)
+        assert len(os.listdir(my_config.AUDIO_RAW_PATH)) == len(
+            os.listdir(my_config.SUBTITLE_RAW_PATH)
         ), "audio and subtitle files are not matched"
         print("  downloaded: {}, skipped: {}".format(download_count, skip_count))
 
@@ -313,8 +315,9 @@ def create_path(path):
 
 
 def main():
-    create_path(my_config.SUBTITLE_PATH)
-    create_path(my_config.AUDIO_PATH)
+    create_path(my_config.SUBTITLE_RAW_PATH)
+    create_path(my_config.AUDIO_RAW_PATH)
+    create_path(my_config.METADATA_PATH)
 
     os.chdir(my_config.DATA_PATH)
     vid_list = []
@@ -346,7 +349,9 @@ def main():
     print("finished downloading videos")
 
     print("removing unnecessary subtitles...")
-    for f in glob.glob("audios/*.en.vtt") + glob.glob("subtitles/*.vtt"):
+    for f in glob.glob(f"{my_config.AUDIO_RAW_PATH}/*.en.vtt") + glob.glob(
+        f"{my_config.SUBTITLE_RAW_PATH}/*.vtt"
+    ):
         os.remove(f)
 
 

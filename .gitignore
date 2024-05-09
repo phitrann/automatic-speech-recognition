@@ -6,8 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
-# Data and config files
+# Data, model and config files
 data/
+models/
 config.py
 
 # Distribution / packaging

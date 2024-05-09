@@ -1,24 +1,44 @@
 [project]
 name = "asr"
-version = "0.1.0"
+version = "0.0.1"
 description = "Automatic Speech Recognition"
 authors = [
     {name = "Foxxy-HCMUS", email = "hoanganh6758@gmail.com"},
 ]
+
 dependencies = [
     "requests>=2.31.0",
     "ipykernel>=6.29.4",
     "yt-dlp @ https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz",
     "apiclient>=1.0.4",
     "google-api-python-client>=2.128.0",
+    "pydub>=0.25.1",
+    "transformers>=4.40.2",
+    "datasets>=2.19.1",
+    "torch==1.13.1",
+    "torchaudio==0.13.1",
+    "torchvision==0.14.1",
+    "accelerate",
 ]
+
 requires-python = ">=3.8"
 readme = "README.md"
 license = {text = "MIT"}
 
+
 [project.optional-dependencies]
+all = [
+    "asr[dev]",
+    "asr[test]",
+]
+
 dev = [
-    "pre-commit>=3.5.0",
+    "ruff>=0.2.1",
+    "pre-commit>=3.6.0",
+]
+test = [
+    "pytest>=8.0.0",
+    "coverage>=7.4.1",
 ]
 
 [build-system]
