@@ -12,5 +12,6 @@ torchaudio==0.13.1
 torchvision==0.14.1+cu116
 mlflow==2.12.1
 accelerate
+levenshtein
 # Editable Git install with no remote (asr==0.1.0)
 -e /mnt/net/i2x256-ai03/hotel/phit/personal/asr

@@ -39,8 +39,7 @@ pipe = pipeline(
 # sample = dataset[0]["audio"]
 
 # result = pipe(sample)
-file_id = "SCWFVd_FiAU"
-result = pipe(f"{cfg.AUDIO_RAW_PATH}/{file_id}.mp3")
+result = pipe(f"{cfg.AUDIO_RAW_PATH}/{cfg.TWO_PEOPLE_ID}.mp3")
 print(result)
-with open(f"{cfg.PATH}/results/{file_id}.json", "w+") as f:
+with open(f"{cfg.PATH}/results/{cfg.TWO_PEOPLE_ID}.json", "w+") as f:
     json.dump(result, f, indent=2)

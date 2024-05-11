@@ -1,0 +1,1916 @@
+{
+  "text": " Let's say that you are designing a marketplace for your website. Selling firearms is prohibited by your website's terms of service agreement, not to mention the laws of your country. To this end, you want to create a system that can automatically detect if a listing on the marketplace is selling a gun. How would you go about doing this? Yeah, it's an interesting question. I'm curious about a few things here. First, I guess one thing I'm wondering about is like how if I was given this task, like how is this working in kind of production? You know, the task is to automatically identify the listings. What happens with those identifications? Do they go to a human who checks it or is it like immediately changes the website? Yeah. So let's say that the current setup is that it's all crowdsourced. So let's say we have a flag and then a user can flag the listing if they see it's a gun or maybe someone who works in terms of like moderating the marketplace can also flag it and then it'll go to another internal let's say someone who works in customer support that can then remove the listing if they determine it as a gun and that's the only thing that kind of happens right now okay and then how would this fit in is the end of the line always going to be customer service or how would this fit in? Is the end of the line always going to be customer service? Or how would this fit in that pipeline, you think? So I guess reframe the question back to you. But let's say that this is the current system, right? And I guess given the kind of context, would you think that the goal is to first disable it when they're posting? Do you think we should be like detecting it afterwards after a few days and then sending it to customer support? What part do you think? Yeah, so I guess, yeah, the reason I was asking that question, I guess I could have said that too. Because if if customer service is going to look at it afterwards, which I think would probably be the better way to go to start. But if they're doing it that way, then that means that I really need to do a very good job of detecting all the possible firearm listings. It's bad if I miss something that is a firearm, but I miss it because at the end, the customer service is going to look at it. And so I'm assuming it'll be okay. It might cost some money, but it's probably going to be okay if I give it false positives, like listings that aren't guns, and then let the customer service deal with it. But it seems like in this pipeline, it would be very costly in the sense that you're maybe breaking laws of your country or your terms of service if you totally miss the listing, and you have this false negative. Yeah, so that's how I would think about it. So I guess, given the costs, do you think we would then err on the side of reducing the number of false negatives or false positives in this case? So my initial point was about false negatives because we want the customer service to get everything that's pertinent and they can decide because they won't see anything that's not been flagged or not been identified. So, but if costs are a concern, then yeah, we would be concerned with the false positives because that would mean that the customer service gets extra ones that are not really relevant at all. They're adding to their workload. Okay. So let's like maybe think about an assumption of what is okay in terms of how the process might go. And maybe this could be an example so you know in my mind i think like if we let's say someone posts a gun it gets put onto marketplace it gets removed within one hour that's probably good probably not a lot of time for someone to go out reach out message try to get that gun from the seller in that scenario maybe a bad case scenario is that we get overloaded with a bunch of other items that are trying to be sold that are not guns. And then they get the typical, your posting was flagged until it's reviewed by customer service. Therefore, reducing kind of liquidity in this marketplace as well. All of a sudden, sellers are like, oh, this marketplace sucks. I can't even list my plants on here or else they get flagged. Right. And then therefore kind of reducing that. When we're thinking about the different scenarios here, what is the kind of like the optimal one? You kind of have an idea of what you think is kind of best case scenario here for both parties. Bringing it back. If you're Facebook, what would you think Facebook would want to do in this scenario? It What would you think Facebook would want to do in this scenario? It does depend on what happens with the model at the end. There are different scenarios we've laid out. So if one of the scenarios is the one I was talking about, which is that you don't want to miss anything, in that case, false negatives are important. In other cases, like you're mentioning, which is if it ends up being a sticker that's posted because the model identifies it, but it's not there. And then it can lead to a lot of issues. So that's the false positive case. What we'll want to be concerned with then in our model, so I guess if we're concerned with both those scenarios, then we want to minimize both false positives and false negatives. And so we can use metrics like F1 score to sort of minimize that. I guess another thing that's related to this of why we might choose something like an F1 score, which is basically a combination of precision and recall. And precision is where you're really concerned with you make a bunch of predictions and how many of them are right. The recall is the case where you make a bunch of predictions. How many of the real case scenarios do you get? So how much stuff do you miss? I guess recall is like, what do you miss? Another reason to use these two measures, and I think that seems pertinent here, is because the number of guns are probably gonna be small, right? I'm assuming the actual number of gun posts is probably very small, maybe even less than 1% in like a Facebook marketplace that sells all sorts of stuff. It's an imbalanced sample to those measures that I just mentioned are good for that because they they sort of ignore the fact of the true negative, which is that the post isn't about guns and you get that right. But there's so many of those. So you want to ignore those. Measures like precision and recall will ignore the thing that's very obvious and predominant, which is the listing not having guns and focuses on just getting the positive case of getting the listing with guns. The imbalance case will also maybe come into consideration for the models we choose. So that seems good for the imbalance sample and I guess false positives and false negatives. I think the other things I was thinking is that what sort of the scale and scope and the kind of data we might have, because that'll pertain to how we can answer this question. So I'm guessing maybe speed, at least for training the model, isn't a big issue. And the importance is accuracy. Like we're very concerned with an accurate model. Yeah, definitely. And I'm guessing online you had mentioned like, maybe it's okay. I mean, the model doesn't need to be that fast, I guess. Right. In terms of when it gets deployed and it's making predictions for each post. Yeah. And then I guess in terms of the prior data, so I guess we would have access in this case to other postings and where customer service has flagged stuff. So we have like a large data set where we know that there was a posting and we know whether it was of guns or not. Yes. Yeah. I think we can identify if they were guns. There's probably something where the actual value itself is flagged and then probably also a categorization of why it was flagged for. And for this scenario, we could say that confidently, probably customer service is labeling them as guns or firearms in that category. Okay, yeah. So we can select those flags that are for guns and firearms. Okay, it seems kind of straightforward. And so the idea is that, you know, we really want to identify these gun postings. Part of it might be related to the law. Part of it also might be related to people don't want to see these gun postings, and they also don't want to be necessarily wrongly flagged for the gun postings. So it's very important to have a very accurate model at identifying these very small cases of gun postings. And we don't seem to have as many concerns about model training time or anything like that. We're really concerned with accuracy. With that in mind, with the fact that we already have this data, I'm guessing our data set is fairly large. Maybe there's some things we might want to do with augmenting the data, which I think, so if I think about data collection, and then I can think about features and then think about the model. So if now I think about the features that I have, I have flags that might've been given by users. So I have that as a feature. I might have the particular user who posted it, their demographic information, location information. So maybe, you know, parts of the country have more guns being sold or not. There might be other contextual information. I don't know why this might be, but maybe early in the morning, people like to post their gun sales. And then I think what's critical for me here is the text as a feature, the body of the text itself. I guess another feature could be the, maybe they post some images, but I'm thinking maybe for now, just to focus the model a little bit, I can, I might ignore the images part just for now, but I think when I talk about the text, a lot of what I'll say can apply to the images. And I think the big part here to me is seems like the text in that data and being able to leverage that information to get keywords or to get patterns of words. Yeah. So you might have other data too, like the length of the text or something like that. So we have those features, user data, flags, context information, the text. So now I want to focus a little bit on the text itself and what we can do with it to use for our model. I think just to start, I mean, I often feel this way when dealing with text data, you want to start with a simpler model, I suppose, and so the simpler model might be something like a bag of words. One also reason to start with that is that you can get a nice baseline. And I guess a related question here, I meant to ask this earlier, was that, do we have other baselines? Like, I guess we have previous performance of how the user flags worked or... So we have some other data in the past. Yeah, yeah. Let's assume that, yeah, we have all this data that Facebook itself has access to. Yeah. So we have some baseline data of how their current process is working. And then I'm suggesting we can have this other baseline where we just, we use the simplest approach for text analysis. Even though I did mention, we did talk about this, that there is a lot of time. So technically we could use more complicated models like attention-based transformers that take contextual information into account. But for now, I'll just focus on the simpler model and talk through with that. Maybe we can talk at the end of the value of these more sophisticated approaches. So I guess if we have the text data, then we can extract the bag of words, which just means that we get for each body of text, we get the unique words in the text and the counts of those words. We have like, I don't know how many millions of posts. So we have this for each post. We have these bag of words. The other thing we can do is an approach called the TF-IDF, where we scale the value of each word based on its frequency in different postings. And the reason this can be valuable is that you might expect that postings about guns, for instance, tend to use specific words not found in other postings. You know, before even running the model, I might be helping my model by selecting words that are unique to particular listings. And so this will upweight those words that tend to be very specific to specific listings. Because the bag of words can be like millions and millions of words, so it's a huge sparse matrix. So sometimes you might want to do additional reduction. So you might do something like a PCA to reduce that to something like 500 dimensions. The point of all this process is that you're taking the text and you're putting it into some embedding space. And the value of the embedding space is it's almost like what you're doing is you're putting each listing, you're plotting it in space. And the idea is that you want to plot points in space that mean similar things. This processing technique should, before we even build our model, should place each listing next to each other that mean the same thing. That's the sort of idea of this process. And since we know that idea, we can always substitute it with other methods that are more sophisticated if we want, that sort of like how we get the features. So now I guess we want to think a bit about the model that we want to build. Because we have the imbalance sample, I would think maybe the model to start with, at least we can again iterate as we go, but for our first prototype, maybe we could start with a tree-based model, particularly something like a gradient boosted tree. Because what's nice about these models is that you have each tree that makes a prediction. So in this case, it's taking all our features and predicting whether it's a gun posting or not a gun posting. And then it takes the points, the data points that have the most error, and it scales them. So it upweights those data points that were in error for the next tree. What this effectively will do is it'll upweight the sort of minority sample points. Those listings that are for guns are very few. And so if they keep causing an error in the model, their weight will keep going up and they'll be more and more important in making the prediction. That's maybe why a gradient boosted tree would be good to start with. Yeah. The only one issue could be if you want online training. And so maybe if there's an issue of online training, the gradient boosted trees may not be optimal for it. And so we could try other models if we wanted. And the difference between online and offline training is that online training happens while the model is deployed and does continual improvement. Is that right? Yeah, yeah, exactly. But I'm guessing in this case, what we probably would want to do is maybe every so often we update the model, in which case the usually the gradient boosted trees are pretty quick to train and they're fast at also delivering the predictions at inference time. So we could just retrain the whole model. But say for whatever reason, every time customer service answers that you want to update the model, then this tree-based approach, depending on what package you use, it's not going to be very optimal. So you might want to use other approaches like a neural network that could allow for this online training. We talked a bit about like, so we're building this model with the Gradient Boosted Tree. We talked earlier about we can't really use accuracy, like just plain and simple accuracy, because it's such a small sample that we have. There's very few gun posts. The one thing I could have mentioned earlier is one way to deal with that too is to balance the sample. So if we have a lot of data, we also could have evened out the two samples. So we could have taken how many gun postings we have and just gotten a matched sample of the equivalent other sample. But say we were not doing that, say there are not enough gun postings to really have that match, then accuracy won't be that great. And what we'll want is like what we talked about is precision and recall. Are there other things to consider evaluating the model and maybe when we roll it out? Yeah, like I said, we can use precision and recall and we can combine them in this F1 score that just ranged between zero and one. And that can tell us how well the model is performing at predicting those gun sales. When we're building the model, we probably would be training, I guess, on our historic data, we'd be taking some sample of data in time, that's our training sample. And then the test set is something later in time, which would probably mimic how it's occurring in production where our model is trained with a given set of data in time and it's predicting new data in the future. One thing we might want to consider is how long this prediction is good for, how often we want to keep rebuilding this model because I guess as everything on the internet or the spam calls I get, they get more and more creative at doing these things. So we might want to update the model to deal with these creativities that people have. Yeah. And that's actually a good question, because I think as people realize that their posts are being flagged, we're dealing with very malicious actors that are active in their campaign to sell guns on the internet. Maybe one of the aspects is that they start creatively disguising their posts, right? And so that the traditional NLP tasks of detecting bullets or guns for sale turns into like code names or something, in which then we still have to then reuse that use of identifying manual tagging sorts. So I guess one additional question I have is, how do we know the performance addition of doing like more advanced approaches, right? And so let's say that we wanna dive into computer vision. I know you have a computer vision back under the RRN. So like, I guess, like, how would you assess the necessity of maybe using like images into your analysis versus just only using text? And you know, you know, that images probably are harder to train, there's probably a lot more difficulty with having expertise and images versus just text, which has like great packages on Python to use. And so, yeah, how would you kind of like approach that situation? How would you know that it's worth doing the image analysis into the features versus just going with a basic model? Yeah. So I guess the question is like, what's the added value of the images and is it worth bringing all that whatever time it takes and. Exactly. Yes. I think, I mean, I mean, it's very simple approach that you could use that I like using is you just like sort of build the model. You have all the features in there and then you get its prediction, what the full model's prediction accuracy is. So say for instance, the full model is at 90%. Yeah. It seems really good. And then you drop the images from the model and then you see, know when you remove the images what the value is and the accuracy and say it's 85 and then say you you do it again but you remove the text data and the text data when you remove it it's like seven sixty percent accuracy or something so so so yeah there you can know oh wow the text is very valuable but the images does drop it so you're like okay well you told me now when you drop the images the accuracy does drop but. So you're like, okay, well, you told me now when you drop the images, the accuracy does drop, but is that a meaningful drop? So one thing I think you could do is just simulate randomly sampling the data, especially because we have enough data, like I said here, I guess, in this Facebook, it's a huge amount of data set. So what you could do is randomly sample from the data and retrain the model each time and get this drop in accuracy when you remove the images. And so say, I guess I could say if 95% of the time, the drop in accuracy is more than zero, it's like, it's like there's a negative drop. So then I might say, yeah, images are important, because almost all the time that I've tried it out, you know, simulating across multiple samples, there is that drop in accuracy. Gotcha. Okay, cool. Yeah. I mean, that makes a lot of sense. Any additional kind of thoughts on this question? Oh, I was gonna say something about like, if we could augment the data to for text data, but some of those things are cool, where you can use machine translation to change the specific text words, but keep the meaning. But I guess other things this model would be sort of a first step, we're taking in all these features, the user data, the flags, and the text. We're making some predictions. So I think the final thing would just be to check where the errors are happening and maybe use that to help with the model. So one thing you might find is that, say, we flag toy guns all the time are being flagged. So one simple thing you could do with just the simple model where I use a bag of words is I could use like an Ngram model. So I could take every two words and use the pairs of words. And then in that case, I would get toy gun. And that way I could identify, oh, these things that are actually toy guns that are being wrongly flagged. And I could solve that problem by just changing the model to include this local history with pairs of words. Cool. Yeah, that makes sense. Final question. And this is kind of just more in relation to the question itself. Like, what do you think about this question? Like, how well do you think it assesses the candidate's performance? Just overall, how do you feel your answer would kind of like fit in into like a broader Facebook interview? I mean, I'm not sure about the broader Facebook interview. But I guess this, I mean, this question is pretty, it seems very standard, like, it's very machine learning, right? You test your knowledge of minority, like when you have very few things you're predicting, you have to sort of build the model, but you go from end to end. And I think it's also, to me, seems like a fairly common problem you might face. Not this specific one, but something like this, where, you know, you need to identify something from a particular listing, a particular post, or some, you know, in my case, I deal with videos a lot. And so it's, it's like in line with, I think what, what you also might have to work on. Yeah. What were your thoughts? Do you have any? Yeah. I mean, I liked it a lot and I liked your answer and how you structured everything. And I feel like that's a great approach for most machine learning type questions as well, because I feel like most of them have a very defined beginning, middle, and end in terms of where's the data, how do you build the model and then how would you deploy and evaluate it? And I think focusing on those approaches is really key. And so I think you did a great job there. Yeah. Good. Awesome.",
+  "chunks": [
+    {
+      "timestamp": [
+        0.0,
+        4.26
+      ],
+      "text": " Let's say that you are designing a marketplace for your website. Selling firearms is prohibited"
+    },
+    {
+      "timestamp": [
+        4.26,
+        9.58
+      ],
+      "text": " by your website's terms of service agreement, not to mention the laws of your country. To this end,"
+    },
+    {
+      "timestamp": [
+        9.64,
+        13.86
+      ],
+      "text": " you want to create a system that can automatically detect if a listing on the marketplace is selling"
+    },
+    {
+      "timestamp": [
+        13.86,
+        18.28
+      ],
+      "text": " a gun. How would you go about doing this? Yeah, it's an interesting question. I'm curious about"
+    },
+    {
+      "timestamp": [
+        18.28,
+        27.82
+      ],
+      "text": " a few things here. First, I guess one thing I'm wondering about is like how if I was given this task, like how is this working in kind of production? You know, the task is to automatically identify the listings."
+    },
+    {
+      "timestamp": [
+        28.12,
+        29.52
+      ],
+      "text": " What happens with those identifications?"
+    },
+    {
+      "timestamp": [
+        29.74,
+        34.84
+      ],
+      "text": " Do they go to a human who checks it or is it like immediately changes the website?"
+    },
+    {
+      "timestamp": [
+        35.08,
+        35.26
+      ],
+      "text": " Yeah."
+    },
+    {
+      "timestamp": [
+        35.34,
+        38.72
+      ],
+      "text": " So let's say that the current setup is that it's all crowdsourced."
+    },
+    {
+      "timestamp": [
+        38.72,
+        47.16
+      ],
+      "text": " So let's say we have a flag and then a user can flag the listing if they see it's a gun or maybe someone who works in terms"
+    },
+    {
+      "timestamp": [
+        47.16,
+        52.9
+      ],
+      "text": " of like moderating the marketplace can also flag it and then it'll go to another internal let's say"
+    },
+    {
+      "timestamp": [
+        52.9,
+        56.76
+      ],
+      "text": " someone who works in customer support that can then remove the listing if they determine it as"
+    },
+    {
+      "timestamp": [
+        56.76,
+        60.68
+      ],
+      "text": " a gun and that's the only thing that kind of happens right now okay and then how would this"
+    },
+    {
+      "timestamp": [
+        60.68,
+        65.28
+      ],
+      "text": " fit in is the end of the line always going to be customer service or how would this fit in? Is the end of the line always going to be customer service? Or how would this fit in that pipeline, you think?"
+    },
+    {
+      "timestamp": [
+        65.4,
+        67.72
+      ],
+      "text": " So I guess reframe the question back to you."
+    },
+    {
+      "timestamp": [
+        68.02,
+        71.56
+      ],
+      "text": " But let's say that this is the current system, right?"
+    },
+    {
+      "timestamp": [
+        71.76,
+        79.3
+      ],
+      "text": " And I guess given the kind of context, would you think that the goal is to first disable"
+    },
+    {
+      "timestamp": [
+        79.3,
+        80.4
+      ],
+      "text": " it when they're posting?"
+    },
+    {
+      "timestamp": [
+        80.94,
+        85.06
+      ],
+      "text": " Do you think we should be like detecting it afterwards after a few days and then sending"
+    },
+    {
+      "timestamp": [
+        85.06,
+        89.96
+      ],
+      "text": " it to customer support? What part do you think? Yeah, so I guess, yeah, the reason I was asking"
+    },
+    {
+      "timestamp": [
+        89.96,
+        95.38
+      ],
+      "text": " that question, I guess I could have said that too. Because if if customer service is going to"
+    },
+    {
+      "timestamp": [
+        95.38,
+        99.46
+      ],
+      "text": " look at it afterwards, which I think would probably be the better way to go to start."
+    },
+    {
+      "timestamp": [
+        99.72,
+        107.32
+      ],
+      "text": " But if they're doing it that way, then that means that I really need to do a very good job of detecting all the possible firearm listings."
+    },
+    {
+      "timestamp": [
+        107.94,
+        113.22
+      ],
+      "text": " It's bad if I miss something that is a firearm, but I miss it because at the end, the customer"
+    },
+    {
+      "timestamp": [
+        113.22,
+        114.54
+      ],
+      "text": " service is going to look at it."
+    },
+    {
+      "timestamp": [
+        114.68,
+        116.6
+      ],
+      "text": " And so I'm assuming it'll be okay."
+    },
+    {
+      "timestamp": [
+        116.72,
+        121.04
+      ],
+      "text": " It might cost some money, but it's probably going to be okay if I give it false positives,"
+    },
+    {
+      "timestamp": [
+        121.04,
+        125.52
+      ],
+      "text": " like listings that aren't guns, and then let the customer service deal with it."
+    },
+    {
+      "timestamp": [
+        125.78,
+        131.06
+      ],
+      "text": " But it seems like in this pipeline, it would be very costly in the sense that you're maybe"
+    },
+    {
+      "timestamp": [
+        131.06,
+        135.74
+      ],
+      "text": " breaking laws of your country or your terms of service if you totally miss the listing,"
+    },
+    {
+      "timestamp": [
+        135.98,
+        142.56
+      ],
+      "text": " and you have this false negative. Yeah, so that's how I would think about it."
+    },
+    {
+      "timestamp": [
+        142.56,
+        153.16
+      ],
+      "text": " So I guess, given the costs, do you think we would then err on the side of reducing the number of false negatives or false positives in this case?"
+    },
+    {
+      "timestamp": [
+        153.3,
+        165.3
+      ],
+      "text": " So my initial point was about false negatives because we want the customer service to get everything that's pertinent and they can decide because they won't see anything that's not been flagged or not been identified."
+    },
+    {
+      "timestamp": [
+        166.0,
+        170.86
+      ],
+      "text": " So, but if costs are a concern, then yeah, we would be concerned with the false positives"
+    },
+    {
+      "timestamp": [
+        170.86,
+        176.2
+      ],
+      "text": " because that would mean that the customer service gets extra ones that are not really"
+    },
+    {
+      "timestamp": [
+        176.2,
+        177.02
+      ],
+      "text": " relevant at all."
+    },
+    {
+      "timestamp": [
+        177.2,
+        178.68
+      ],
+      "text": " They're adding to their workload."
+    },
+    {
+      "timestamp": [
+        179.24,
+        179.3
+      ],
+      "text": " Okay."
+    },
+    {
+      "timestamp": [
+        179.36,
+        184.38
+      ],
+      "text": " So let's like maybe think about an assumption of what is okay in terms of how the process"
+    },
+    {
+      "timestamp": [
+        184.38,
+        184.96
+      ],
+      "text": " might go."
+    },
+    {
+      "timestamp": [
+        185.68,
+        192.32
+      ],
+      "text": " And maybe this could be an example so you know in my mind i think like if we let's say someone posts a gun it gets"
+    },
+    {
+      "timestamp": [
+        192.32,
+        196.88
+      ],
+      "text": " put onto marketplace it gets removed within one hour that's probably good probably not a lot of"
+    },
+    {
+      "timestamp": [
+        196.88,
+        202.64
+      ],
+      "text": " time for someone to go out reach out message try to get that gun from the seller in that scenario"
+    },
+    {
+      "timestamp": [
+        202.64,
+        206.04
+      ],
+      "text": " maybe a bad case scenario is that we get overloaded"
+    },
+    {
+      "timestamp": [
+        206.04,
+        211.72
+      ],
+      "text": " with a bunch of other items that are trying to be sold that are not guns. And then they get the"
+    },
+    {
+      "timestamp": [
+        211.72,
+        216.84
+      ],
+      "text": " typical, your posting was flagged until it's reviewed by customer service. Therefore, reducing"
+    },
+    {
+      "timestamp": [
+        216.84,
+        221.18
+      ],
+      "text": " kind of liquidity in this marketplace as well. All of a sudden, sellers are like, oh, this"
+    },
+    {
+      "timestamp": [
+        221.18,
+        226.18
+      ],
+      "text": " marketplace sucks. I can't even list my plants on here or else they get flagged."
+    },
+    {
+      "timestamp": [
+        226.52,
+        226.82
+      ],
+      "text": " Right."
+    },
+    {
+      "timestamp": [
+        226.82,
+        228.68
+      ],
+      "text": " And then therefore kind of reducing that."
+    },
+    {
+      "timestamp": [
+        228.94,
+        231.26
+      ],
+      "text": " When we're thinking about the different scenarios here, what is"
+    },
+    {
+      "timestamp": [
+        231.26,
+        232.88
+      ],
+      "text": " the kind of like the optimal one?"
+    },
+    {
+      "timestamp": [
+        232.88,
+        236.42
+      ],
+      "text": " You kind of have an idea of what you think is kind of best case"
+    },
+    {
+      "timestamp": [
+        236.42,
+        238.62
+      ],
+      "text": " scenario here for both parties."
+    },
+    {
+      "timestamp": [
+        238.68,
+        239.28
+      ],
+      "text": " Bringing it back."
+    },
+    {
+      "timestamp": [
+        239.28,
+        241.66
+      ],
+      "text": " If you're Facebook, what would you think Facebook would"
+    },
+    {
+      "timestamp": [
+        241.66,
+        242.88
+      ],
+      "text": " want to do in this scenario?"
+    },
+    {
+      "timestamp": [
+        246.52,
+        248.6
+      ],
+      "text": " It What would you think Facebook would want to do in this scenario? It does depend on what happens with the model at the end. There are different scenarios we've laid out."
+    },
+    {
+      "timestamp": [
+        248.6,
+        252.44
+      ],
+      "text": " So if one of the scenarios is the one I was talking about, which is that you don't want"
+    },
+    {
+      "timestamp": [
+        252.44,
+        255.82
+      ],
+      "text": " to miss anything, in that case, false negatives are important."
+    },
+    {
+      "timestamp": [
+        255.82,
+        260.16
+      ],
+      "text": " In other cases, like you're mentioning, which is if it ends up being a sticker that's posted"
+    },
+    {
+      "timestamp": [
+        260.16,
+        265.1
+      ],
+      "text": " because the model identifies it, but it's not there. And then it can lead to a lot of issues."
+    },
+    {
+      "timestamp": [
+        270.12,
+        270.36
+      ],
+      "text": " So that's the false positive case. What we'll want to be concerned with then in our model,"
+    },
+    {
+      "timestamp": [
+        274.08,
+        279.86
+      ],
+      "text": " so I guess if we're concerned with both those scenarios, then we want to minimize both false positives and false negatives. And so we can use metrics like F1 score to sort of minimize that."
+    },
+    {
+      "timestamp": [
+        280.14,
+        285.2
+      ],
+      "text": " I guess another thing that's related to this of why we might choose something like an F1 score,"
+    },
+    {
+      "timestamp": [
+        285.2,
+        291.52
+      ],
+      "text": " which is basically a combination of precision and recall. And precision is where you're really"
+    },
+    {
+      "timestamp": [
+        291.52,
+        296.4
+      ],
+      "text": " concerned with you make a bunch of predictions and how many of them are right. The recall is the case"
+    },
+    {
+      "timestamp": [
+        296.4,
+        301.68
+      ],
+      "text": " where you make a bunch of predictions. How many of the real case scenarios do you get? So how much"
+    },
+    {
+      "timestamp": [
+        301.68,
+        308.42
+      ],
+      "text": " stuff do you miss? I guess recall is like, what do you miss? Another reason to use these two measures, and I think that seems pertinent here, is because the"
+    },
+    {
+      "timestamp": [
+        308.42,
+        312.82
+      ],
+      "text": " number of guns are probably gonna be small, right? I'm assuming the actual number of gun posts is"
+    },
+    {
+      "timestamp": [
+        312.82,
+        317.34
+      ],
+      "text": " probably very small, maybe even less than 1% in like a Facebook marketplace that sells all sorts"
+    },
+    {
+      "timestamp": [
+        317.34,
+        328.86
+      ],
+      "text": " of stuff. It's an imbalanced sample to those measures that I just mentioned are good for that because they they sort of ignore the fact of the true negative, which is that the post isn't about guns and you get that right."
+    },
+    {
+      "timestamp": [
+        329.16,
+        330.22
+      ],
+      "text": " But there's so many of those."
+    },
+    {
+      "timestamp": [
+        330.34,
+        331.3
+      ],
+      "text": " So you want to ignore those."
+    },
+    {
+      "timestamp": [
+        331.3,
+        336.7
+      ],
+      "text": " Measures like precision and recall will ignore the thing that's very obvious and predominant,"
+    },
+    {
+      "timestamp": [
+        336.8,
+        342.1
+      ],
+      "text": " which is the listing not having guns and focuses on just getting the positive case of getting"
+    },
+    {
+      "timestamp": [
+        342.1,
+        343.14
+      ],
+      "text": " the listing with guns."
+    },
+    {
+      "timestamp": [
+        343.3,
+        345.8
+      ],
+      "text": " The imbalance case will also maybe come"
+    },
+    {
+      "timestamp": [
+        345.8,
+        349.72
+      ],
+      "text": " into consideration for the models we choose. So that seems good for the imbalance sample and I"
+    },
+    {
+      "timestamp": [
+        349.72,
+        353.92
+      ],
+      "text": " guess false positives and false negatives. I think the other things I was thinking is that what sort"
+    },
+    {
+      "timestamp": [
+        353.92,
+        358.7
+      ],
+      "text": " of the scale and scope and the kind of data we might have, because that'll pertain to how we can"
+    },
+    {
+      "timestamp": [
+        358.7,
+        364.1
+      ],
+      "text": " answer this question. So I'm guessing maybe speed, at least for training the model, isn't a big issue."
+    },
+    {
+      "timestamp": [
+        366.32,
+        368.2
+      ],
+      "text": " And the importance is accuracy. Like we're very concerned with an accurate model."
+    },
+    {
+      "timestamp": [
+        368.2,
+        369.12
+      ],
+      "text": " Yeah, definitely."
+    },
+    {
+      "timestamp": [
+        369.6,
+        372.96
+      ],
+      "text": " And I'm guessing online you had mentioned like, maybe it's okay."
+    },
+    {
+      "timestamp": [
+        373.0,
+        375.06
+      ],
+      "text": " I mean, the model doesn't need to be that fast, I guess."
+    },
+    {
+      "timestamp": [
+        375.06,
+        375.56
+      ],
+      "text": " Right."
+    },
+    {
+      "timestamp": [
+        375.88,
+        379.68
+      ],
+      "text": " In terms of when it gets deployed and it's making predictions for each post."
+    },
+    {
+      "timestamp": [
+        380.2,
+        380.36
+      ],
+      "text": " Yeah."
+    },
+    {
+      "timestamp": [
+        380.36,
+        389.54
+      ],
+      "text": " And then I guess in terms of the prior data, so I guess we would have access in this case to other postings and where customer service has flagged stuff. So we have like"
+    },
+    {
+      "timestamp": [
+        389.54,
+        393.86
+      ],
+      "text": " a large data set where we know that there was a posting and we know whether it was of"
+    },
+    {
+      "timestamp": [
+        393.86,
+        394.86
+      ],
+      "text": " guns or not."
+    },
+    {
+      "timestamp": [
+        394.86,
+        399.5
+      ],
+      "text": " Yes. Yeah. I think we can identify if they were guns. There's probably something where"
+    },
+    {
+      "timestamp": [
+        399.5,
+        405.52
+      ],
+      "text": " the actual value itself is flagged and then probably also a categorization of why it was flagged for."
+    },
+    {
+      "timestamp": [
+        405.98,
+        409.98
+      ],
+      "text": " And for this scenario, we could say that confidently, probably customer service is"
+    },
+    {
+      "timestamp": [
+        409.98,
+        414.88
+      ],
+      "text": " labeling them as guns or firearms in that category. Okay, yeah. So we can select those"
+    },
+    {
+      "timestamp": [
+        414.88,
+        419.98
+      ],
+      "text": " flags that are for guns and firearms. Okay, it seems kind of straightforward. And so the idea"
+    },
+    {
+      "timestamp": [
+        419.98,
+        426.08
+      ],
+      "text": " is that, you know, we really want to identify these gun postings. Part of it might be related to the law."
+    },
+    {
+      "timestamp": [
+        426.44,
+        431.5
+      ],
+      "text": " Part of it also might be related to people don't want to see these gun postings, and they also"
+    },
+    {
+      "timestamp": [
+        431.5,
+        435.9
+      ],
+      "text": " don't want to be necessarily wrongly flagged for the gun postings. So it's very important to have"
+    },
+    {
+      "timestamp": [
+        435.9,
+        442.3
+      ],
+      "text": " a very accurate model at identifying these very small cases of gun postings. And we don't seem"
+    },
+    {
+      "timestamp": [
+        442.3,
+        445.56
+      ],
+      "text": " to have as many concerns about model training time or anything"
+    },
+    {
+      "timestamp": [
+        445.56,
+        450.36
+      ],
+      "text": " like that. We're really concerned with accuracy. With that in mind, with the fact that we already"
+    },
+    {
+      "timestamp": [
+        450.36,
+        455.56
+      ],
+      "text": " have this data, I'm guessing our data set is fairly large. Maybe there's some things we might"
+    },
+    {
+      "timestamp": [
+        455.56,
+        459.02
+      ],
+      "text": " want to do with augmenting the data, which I think, so if I think about data collection,"
+    },
+    {
+      "timestamp": [
+        459.02,
+        469.68
+      ],
+      "text": " and then I can think about features and then think about the model. So if now I think about the features that I have, I have flags that might've been given by users. So I have that as a feature. I might have the"
+    },
+    {
+      "timestamp": [
+        469.68,
+        474.16
+      ],
+      "text": " particular user who posted it, their demographic information, location information. So maybe,"
+    },
+    {
+      "timestamp": [
+        474.16,
+        478.88
+      ],
+      "text": " you know, parts of the country have more guns being sold or not. There might be other contextual"
+    },
+    {
+      "timestamp": [
+        478.88,
+        485.36
+      ],
+      "text": " information. I don't know why this might be, but maybe early in the morning, people like to post their gun sales."
+    },
+    {
+      "timestamp": [
+        491.44,
+        491.68
+      ],
+      "text": " And then I think what's critical for me here is the text as a feature, the body of the text itself."
+    },
+    {
+      "timestamp": [
+        496.16,
+        496.22
+      ],
+      "text": " I guess another feature could be the, maybe they post some images, but I'm thinking maybe for now,"
+    },
+    {
+      "timestamp": [
+        500.54,
+        509.28
+      ],
+      "text": " just to focus the model a little bit, I can, I might ignore the images part just for now, but I think when I talk about the text, a lot of what I'll say can apply to the images. And I think the big part here to me is seems like the text in that data and being able to leverage"
+    },
+    {
+      "timestamp": [
+        509.28,
+        515.6
+      ],
+      "text": " that information to get keywords or to get patterns of words. Yeah. So you might have"
+    },
+    {
+      "timestamp": [
+        515.6,
+        519.6
+      ],
+      "text": " other data too, like the length of the text or something like that. So we have those features,"
+    },
+    {
+      "timestamp": [
+        519.6,
+        527.24
+      ],
+      "text": " user data, flags, context information, the text. So now I want to focus a little bit on the text itself and what we can"
+    },
+    {
+      "timestamp": [
+        527.24,
+        529.08
+      ],
+      "text": " do with it to use for our model."
+    },
+    {
+      "timestamp": [
+        529.12,
+        532.3
+      ],
+      "text": " I think just to start, I mean, I often feel this way when dealing with text data,"
+    },
+    {
+      "timestamp": [
+        532.3,
+        534.94
+      ],
+      "text": " you want to start with a simpler model, I suppose, and so the simpler model"
+    },
+    {
+      "timestamp": [
+        534.94,
+        536.8
+      ],
+      "text": " might be something like a bag of words."
+    },
+    {
+      "timestamp": [
+        537.04,
+        540.46
+      ],
+      "text": " One also reason to start with that is that you can get a nice baseline."
+    },
+    {
+      "timestamp": [
+        545.12,
+        546.12
+      ],
+      "text": " And I guess a related question here, I meant to ask this earlier, was that, do we have other baselines?"
+    },
+    {
+      "timestamp": [
+        546.12,
+        551.04
+      ],
+      "text": " Like, I guess we have previous performance of how the user flags worked or..."
+    },
+    {
+      "timestamp": [
+        551.04,
+        552.5
+      ],
+      "text": " So we have some other data in the past."
+    },
+    {
+      "timestamp": [
+        552.5,
+        553.5
+      ],
+      "text": " Yeah, yeah."
+    },
+    {
+      "timestamp": [
+        553.5,
+        556.76
+      ],
+      "text": " Let's assume that, yeah, we have all this data that Facebook itself has access to."
+    },
+    {
+      "timestamp": [
+        556.76,
+        557.76
+      ],
+      "text": " Yeah."
+    },
+    {
+      "timestamp": [
+        557.76,
+        560.28
+      ],
+      "text": " So we have some baseline data of how their current process is working."
+    },
+    {
+      "timestamp": [
+        560.28,
+        568.56
+      ],
+      "text": " And then I'm suggesting we can have this other baseline where we just, we use the simplest approach for text analysis. Even though I did mention, we did talk about this, that there is"
+    },
+    {
+      "timestamp": [
+        568.56,
+        572.32
+      ],
+      "text": " a lot of time. So technically we could use more complicated models like attention-based"
+    },
+    {
+      "timestamp": [
+        572.32,
+        576.08
+      ],
+      "text": " transformers that take contextual information into account. But for now, I'll just focus on"
+    },
+    {
+      "timestamp": [
+        576.08,
+        580.08
+      ],
+      "text": " the simpler model and talk through with that. Maybe we can talk at the end of the value of"
+    },
+    {
+      "timestamp": [
+        580.08,
+        587.66
+      ],
+      "text": " these more sophisticated approaches. So I guess if we have the text data, then we can extract the bag of words, which just"
+    },
+    {
+      "timestamp": [
+        587.66,
+        592.06
+      ],
+      "text": " means that we get for each body of text, we get the unique words in the text and the counts"
+    },
+    {
+      "timestamp": [
+        592.06,
+        593.3
+      ],
+      "text": " of those words."
+    },
+    {
+      "timestamp": [
+        593.3,
+        595.74
+      ],
+      "text": " We have like, I don't know how many millions of posts."
+    },
+    {
+      "timestamp": [
+        595.74,
+        597.46
+      ],
+      "text": " So we have this for each post."
+    },
+    {
+      "timestamp": [
+        597.46,
+        598.94
+      ],
+      "text": " We have these bag of words."
+    },
+    {
+      "timestamp": [
+        598.94,
+        606.88
+      ],
+      "text": " The other thing we can do is an approach called the TF-IDF, where we scale the value of each word based on its frequency"
+    },
+    {
+      "timestamp": [
+        606.88,
+        612.16
+      ],
+      "text": " in different postings. And the reason this can be valuable is that you might expect that postings"
+    },
+    {
+      "timestamp": [
+        612.16,
+        616.64
+      ],
+      "text": " about guns, for instance, tend to use specific words not found in other postings. You know,"
+    },
+    {
+      "timestamp": [
+        616.64,
+        621.68
+      ],
+      "text": " before even running the model, I might be helping my model by selecting words that are unique to"
+    },
+    {
+      "timestamp": [
+        621.68,
+        625.68
+      ],
+      "text": " particular listings. And so this will upweight those words"
+    },
+    {
+      "timestamp": [
+        625.68,
+        630.84
+      ],
+      "text": " that tend to be very specific to specific listings. Because the bag of words can be like millions and"
+    },
+    {
+      "timestamp": [
+        630.84,
+        634.62
+      ],
+      "text": " millions of words, so it's a huge sparse matrix. So sometimes you might want to do additional"
+    },
+    {
+      "timestamp": [
+        634.62,
+        639.74
+      ],
+      "text": " reduction. So you might do something like a PCA to reduce that to something like 500 dimensions."
+    },
+    {
+      "timestamp": [
+        639.96,
+        645.14
+      ],
+      "text": " The point of all this process is that you're taking the text and you're putting it into some embedding space."
+    },
+    {
+      "timestamp": [
+        645.14,
+        648.62
+      ],
+      "text": " And the value of the embedding space is it's almost like what you're doing is you're putting"
+    },
+    {
+      "timestamp": [
+        648.62,
+        650.5
+      ],
+      "text": " each listing, you're plotting it in space."
+    },
+    {
+      "timestamp": [
+        650.5,
+        655.0
+      ],
+      "text": " And the idea is that you want to plot points in space that mean similar things."
+    },
+    {
+      "timestamp": [
+        655.0,
+        660.1
+      ],
+      "text": " This processing technique should, before we even build our model, should place each listing"
+    },
+    {
+      "timestamp": [
+        660.1,
+        662.52
+      ],
+      "text": " next to each other that mean the same thing."
+    },
+    {
+      "timestamp": [
+        662.52,
+        668.16
+      ],
+      "text": " That's the sort of idea of this process. And since we know that idea, we can always substitute it with other methods that are"
+    },
+    {
+      "timestamp": [
+        668.16,
+        673.76
+      ],
+      "text": " more sophisticated if we want, that sort of like how we get the features. So now I guess we want"
+    },
+    {
+      "timestamp": [
+        673.76,
+        678.24
+      ],
+      "text": " to think a bit about the model that we want to build. Because we have the imbalance sample,"
+    },
+    {
+      "timestamp": [
+        678.24,
+        689.7
+      ],
+      "text": " I would think maybe the model to start with, at least we can again iterate as we go, but for our first prototype, maybe we could start with a tree-based model, particularly something like a gradient boosted tree. Because what's nice about"
+    },
+    {
+      "timestamp": [
+        689.7,
+        695.12
+      ],
+      "text": " these models is that you have each tree that makes a prediction. So in this case, it's taking all our"
+    },
+    {
+      "timestamp": [
+        695.12,
+        701.58
+      ],
+      "text": " features and predicting whether it's a gun posting or not a gun posting. And then it takes the points,"
+    },
+    {
+      "timestamp": [
+        701.76,
+        705.32
+      ],
+      "text": " the data points that have the most error, and it scales them."
+    },
+    {
+      "timestamp": [
+        705.32,
+        709.94
+      ],
+      "text": " So it upweights those data points that were in error for the next tree."
+    },
+    {
+      "timestamp": [
+        709.94,
+        714.92
+      ],
+      "text": " What this effectively will do is it'll upweight the sort of minority sample points."
+    },
+    {
+      "timestamp": [
+        714.92,
+        718.1
+      ],
+      "text": " Those listings that are for guns are very few."
+    },
+    {
+      "timestamp": [
+        718.1,
+        722.38
+      ],
+      "text": " And so if they keep causing an error in the model, their weight will keep going up and"
+    },
+    {
+      "timestamp": [
+        722.38,
+        728.08
+      ],
+      "text": " they'll be more and more important in making the prediction. That's maybe why a gradient boosted tree would be good to start with."
+    },
+    {
+      "timestamp": [
+        728.24,
+        728.36
+      ],
+      "text": " Yeah."
+    },
+    {
+      "timestamp": [
+        728.4,
+        730.72
+      ],
+      "text": " The only one issue could be if you want online training."
+    },
+    {
+      "timestamp": [
+        730.86,
+        734.8
+      ],
+      "text": " And so maybe if there's an issue of online training, the gradient boosted trees may not"
+    },
+    {
+      "timestamp": [
+        734.8,
+        735.84
+      ],
+      "text": " be optimal for it."
+    },
+    {
+      "timestamp": [
+        735.9,
+        737.98
+      ],
+      "text": " And so we could try other models if we wanted."
+    },
+    {
+      "timestamp": [
+        737.98,
+        745.68
+      ],
+      "text": " And the difference between online and offline training is that online training happens while the model is deployed and does continual"
+    },
+    {
+      "timestamp": [
+        745.68,
+        746.68
+      ],
+      "text": " improvement."
+    },
+    {
+      "timestamp": [
+        746.68,
+        747.68
+      ],
+      "text": " Is that right?"
+    },
+    {
+      "timestamp": [
+        747.68,
+        748.68
+      ],
+      "text": " Yeah, yeah, exactly."
+    },
+    {
+      "timestamp": [
+        748.68,
+        752.6
+      ],
+      "text": " But I'm guessing in this case, what we probably would want to do is maybe every so often we"
+    },
+    {
+      "timestamp": [
+        752.6,
+        756.14
+      ],
+      "text": " update the model, in which case the usually the gradient boosted trees are pretty quick"
+    },
+    {
+      "timestamp": [
+        756.14,
+        760.86
+      ],
+      "text": " to train and they're fast at also delivering the predictions at inference time."
+    },
+    {
+      "timestamp": [
+        760.86,
+        762.88
+      ],
+      "text": " So we could just retrain the whole model."
+    },
+    {
+      "timestamp": [
+        762.88,
+        766.52
+      ],
+      "text": " But say for whatever reason, every time customer service answers that you want to"
+    },
+    {
+      "timestamp": [
+        766.52,
+        770.32
+      ],
+      "text": " update the model, then this tree-based approach, depending on what package you use, it's not"
+    },
+    {
+      "timestamp": [
+        770.32,
+        771.32
+      ],
+      "text": " going to be very optimal."
+    },
+    {
+      "timestamp": [
+        771.32,
+        775.12
+      ],
+      "text": " So you might want to use other approaches like a neural network that could allow for"
+    },
+    {
+      "timestamp": [
+        775.12,
+        776.38
+      ],
+      "text": " this online training."
+    },
+    {
+      "timestamp": [
+        776.38,
+        787.28
+      ],
+      "text": " We talked a bit about like, so we're building this model with the Gradient Boosted Tree. We talked earlier about we can't really use accuracy, like just plain and simple accuracy, because it's such a small sample that we have."
+    },
+    {
+      "timestamp": [
+        787.28,
+        789.14
+      ],
+      "text": " There's very few gun posts."
+    },
+    {
+      "timestamp": [
+        789.14,
+        792.8
+      ],
+      "text": " The one thing I could have mentioned earlier is one way to deal with that too is to balance"
+    },
+    {
+      "timestamp": [
+        792.8,
+        793.8
+      ],
+      "text": " the sample."
+    },
+    {
+      "timestamp": [
+        793.8,
+        797.2
+      ],
+      "text": " So if we have a lot of data, we also could have evened out the two samples."
+    },
+    {
+      "timestamp": [
+        797.2,
+        803.06
+      ],
+      "text": " So we could have taken how many gun postings we have and just gotten a matched sample of"
+    },
+    {
+      "timestamp": [
+        803.06,
+        806.0
+      ],
+      "text": " the equivalent other sample. But say we were not doing that, say"
+    },
+    {
+      "timestamp": [
+        806.0,
+        811.28
+      ],
+      "text": " there are not enough gun postings to really have that match, then accuracy won't be that great."
+    },
+    {
+      "timestamp": [
+        811.28,
+        816.0
+      ],
+      "text": " And what we'll want is like what we talked about is precision and recall. Are there other things"
+    },
+    {
+      "timestamp": [
+        816.0,
+        821.2
+      ],
+      "text": " to consider evaluating the model and maybe when we roll it out? Yeah, like I said, we can use"
+    },
+    {
+      "timestamp": [
+        821.2,
+        829.6
+      ],
+      "text": " precision and recall and we can combine them in this F1 score that just ranged between zero and one. And that can tell us how well the model is performing"
+    },
+    {
+      "timestamp": [
+        829.6,
+        835.02
+      ],
+      "text": " at predicting those gun sales. When we're building the model, we probably would be training, I guess,"
+    },
+    {
+      "timestamp": [
+        835.4,
+        840.38
+      ],
+      "text": " on our historic data, we'd be taking some sample of data in time, that's our training sample. And"
+    },
+    {
+      "timestamp": [
+        840.38,
+        845.0
+      ],
+      "text": " then the test set is something later in time, which would probably mimic how it's occurring in production"
+    },
+    {
+      "timestamp": [
+        845.0,
+        847.84
+      ],
+      "text": " where our model is trained with a given set of data in time"
+    },
+    {
+      "timestamp": [
+        847.84,
+        849.78
+      ],
+      "text": " and it's predicting new data in the future."
+    },
+    {
+      "timestamp": [
+        849.96,
+        851.04
+      ],
+      "text": " One thing we might want to consider"
+    },
+    {
+      "timestamp": [
+        851.04,
+        852.92
+      ],
+      "text": " is how long this prediction is good for,"
+    },
+    {
+      "timestamp": [
+        853.06,
+        856.0
+      ],
+      "text": " how often we want to keep rebuilding this model"
+    },
+    {
+      "timestamp": [
+        856.0,
+        858.08
+      ],
+      "text": " because I guess as everything on the internet"
+    },
+    {
+      "timestamp": [
+        858.08,
+        859.78
+      ],
+      "text": " or the spam calls I get,"
+    },
+    {
+      "timestamp": [
+        859.88,
+        862.22
+      ],
+      "text": " they get more and more creative at doing these things."
+    },
+    {
+      "timestamp": [
+        862.22,
+        869.46
+      ],
+      "text": " So we might want to update the model to deal with these creativities that people have. Yeah. And that's actually a good question,"
+    },
+    {
+      "timestamp": [
+        869.46,
+        874.26
+      ],
+      "text": " because I think as people realize that their posts are being flagged, we're dealing with"
+    },
+    {
+      "timestamp": [
+        874.26,
+        879.22
+      ],
+      "text": " very malicious actors that are active in their campaign to sell guns on the internet. Maybe"
+    },
+    {
+      "timestamp": [
+        879.22,
+        883.9
+      ],
+      "text": " one of the aspects is that they start creatively disguising their posts, right? And so that the"
+    },
+    {
+      "timestamp": [
+        883.9,
+        885.34
+      ],
+      "text": " traditional NLP tasks"
+    },
+    {
+      "timestamp": [
+        885.34,
+        887.44
+      ],
+      "text": " of detecting bullets or guns for sale"
+    },
+    {
+      "timestamp": [
+        887.44,
+        889.62
+      ],
+      "text": " turns into like code names or something,"
+    },
+    {
+      "timestamp": [
+        889.62,
+        891.96
+      ],
+      "text": " in which then we still have to then reuse that use"
+    },
+    {
+      "timestamp": [
+        891.96,
+        894.24
+      ],
+      "text": " of identifying manual tagging sorts."
+    },
+    {
+      "timestamp": [
+        894.24,
+        895.88
+      ],
+      "text": " So I guess one additional question I have is,"
+    },
+    {
+      "timestamp": [
+        895.88,
+        898.04
+      ],
+      "text": " how do we know the performance addition"
+    },
+    {
+      "timestamp": [
+        898.04,
+        900.78
+      ],
+      "text": " of doing like more advanced approaches, right?"
+    },
+    {
+      "timestamp": [
+        900.78,
+        903.6
+      ],
+      "text": " And so let's say that we wanna dive into computer vision."
+    },
+    {
+      "timestamp": [
+        903.6,
+        909.44
+      ],
+      "text": " I know you have a computer vision back under the RRN. So like, I guess, like, how would you assess the necessity"
+    },
+    {
+      "timestamp": [
+        909.44,
+        915.38
+      ],
+      "text": " of maybe using like images into your analysis versus just only using text? And you know,"
+    },
+    {
+      "timestamp": [
+        915.42,
+        919.42
+      ],
+      "text": " you know, that images probably are harder to train, there's probably a lot more difficulty"
+    },
+    {
+      "timestamp": [
+        919.42,
+        926.24
+      ],
+      "text": " with having expertise and images versus just text, which has like great packages on Python to use. And so,"
+    },
+    {
+      "timestamp": [
+        926.24,
+        929.76
+      ],
+      "text": " yeah, how would you kind of like approach that situation? How would you know that it's worth"
+    },
+    {
+      "timestamp": [
+        929.76,
+        934.0
+      ],
+      "text": " doing the image analysis into the features versus just going with a basic model?"
+    },
+    {
+      "timestamp": [
+        934.0,
+        938.48
+      ],
+      "text": " Yeah. So I guess the question is like, what's the added value of the images and is it worth"
+    },
+    {
+      "timestamp": [
+        938.48,
+        941.28
+      ],
+      "text": " bringing all that whatever time it takes and."
+    },
+    {
+      "timestamp": [
+        941.28,
+        946.32
+      ],
+      "text": " Exactly. Yes. I think, I mean, I mean, it's very simple approach that you could use that I like using is you"
+    },
+    {
+      "timestamp": [
+        946.32,
+        947.84
+      ],
+      "text": " just like sort of build the model."
+    },
+    {
+      "timestamp": [
+        947.84,
+        952.5
+      ],
+      "text": " You have all the features in there and then you get its prediction, what the full model's"
+    },
+    {
+      "timestamp": [
+        952.5,
+        953.98
+      ],
+      "text": " prediction accuracy is."
+    },
+    {
+      "timestamp": [
+        953.98,
+        956.76
+      ],
+      "text": " So say for instance, the full model is at 90%."
+    },
+    {
+      "timestamp": [
+        956.76,
+        957.76
+      ],
+      "text": " Yeah."
+    },
+    {
+      "timestamp": [
+        957.76,
+        958.76
+      ],
+      "text": " It seems really good."
+    },
+    {
+      "timestamp": [
+        958.76,
+        965.88
+      ],
+      "text": " And then you drop the images from the model and then you see, know when you remove the images what the value is and"
+    },
+    {
+      "timestamp": [
+        965.88,
+        972.36
+      ],
+      "text": " the accuracy and say it's 85 and then say you you do it again but you remove the text data and the"
+    },
+    {
+      "timestamp": [
+        972.36,
+        977.16
+      ],
+      "text": " text data when you remove it it's like seven sixty percent accuracy or something so so so yeah there"
+    },
+    {
+      "timestamp": [
+        977.16,
+        982.62
+      ],
+      "text": " you can know oh wow the text is very valuable but the images does drop it so you're like okay well"
+    },
+    {
+      "timestamp": [
+        982.62,
+        989.12
+      ],
+      "text": " you told me now when you drop the images the accuracy does drop but. So you're like, okay, well, you told me now when you drop the images, the accuracy does drop, but is that a meaningful drop? So one thing I think you could do is just"
+    },
+    {
+      "timestamp": [
+        989.12,
+        993.92
+      ],
+      "text": " simulate randomly sampling the data, especially because we have enough data, like I said here,"
+    },
+    {
+      "timestamp": [
+        993.92,
+        997.92
+      ],
+      "text": " I guess, in this Facebook, it's a huge amount of data set. So what you could do is randomly"
+    },
+    {
+      "timestamp": [
+        997.92,
+        1005.48
+      ],
+      "text": " sample from the data and retrain the model each time and get this drop in accuracy when you remove the images. And so say, I guess I could say"
+    },
+    {
+      "timestamp": [
+        1005.48,
+        1010.82
+      ],
+      "text": " if 95% of the time, the drop in accuracy is more than zero, it's like, it's like there's a negative"
+    },
+    {
+      "timestamp": [
+        1010.82,
+        1016.54
+      ],
+      "text": " drop. So then I might say, yeah, images are important, because almost all the time that I've"
+    },
+    {
+      "timestamp": [
+        1016.54,
+        1020.58
+      ],
+      "text": " tried it out, you know, simulating across multiple samples, there is that drop in accuracy."
+    },
+    {
+      "timestamp": [
+        1020.92,
+        1027.84
+      ],
+      "text": " Gotcha. Okay, cool. Yeah. I mean, that makes a lot of sense. Any additional kind of thoughts on this question? Oh, I was gonna say something about like, if we could augment the data"
+    },
+    {
+      "timestamp": [
+        1027.84,
+        1032.48
+      ],
+      "text": " to for text data, but some of those things are cool, where you can use machine translation to"
+    },
+    {
+      "timestamp": [
+        1032.48,
+        1038.56
+      ],
+      "text": " change the specific text words, but keep the meaning. But I guess other things this model"
+    },
+    {
+      "timestamp": [
+        1038.56,
+        1045.74
+      ],
+      "text": " would be sort of a first step, we're taking in all these features, the user data, the flags, and the text. We're making some predictions."
+    },
+    {
+      "timestamp": [
+        1046.34,
+        1050.66
+      ],
+      "text": " So I think the final thing would just be to check where the errors are happening and maybe"
+    },
+    {
+      "timestamp": [
+        1050.66,
+        1052.24
+      ],
+      "text": " use that to help with the model."
+    },
+    {
+      "timestamp": [
+        1052.24,
+        1058.18
+      ],
+      "text": " So one thing you might find is that, say, we flag toy guns all the time are being flagged."
+    },
+    {
+      "timestamp": [
+        1058.36,
+        1062.64
+      ],
+      "text": " So one simple thing you could do with just the simple model where I use a bag of words"
+    },
+    {
+      "timestamp": [
+        1062.64,
+        1064.76
+      ],
+      "text": " is I could use like an Ngram model."
+    },
+    {
+      "timestamp": [
+        1065.22,
+        1070.16
+      ],
+      "text": " So I could take every two words and use the pairs of words. And then in that case, I would get toy gun."
+    },
+    {
+      "timestamp": [
+        1070.7,
+        1075.02
+      ],
+      "text": " And that way I could identify, oh, these things that are actually toy guns that are being wrongly"
+    },
+    {
+      "timestamp": [
+        1075.02,
+        1079.24
+      ],
+      "text": " flagged. And I could solve that problem by just changing the model to include this local history"
+    },
+    {
+      "timestamp": [
+        1079.24,
+        1088.38
+      ],
+      "text": " with pairs of words. Cool. Yeah, that makes sense. Final question. And this is kind of just more in relation to the question itself. Like, what do you think about this question? Like, how well do"
+    },
+    {
+      "timestamp": [
+        1088.38,
+        1092.56
+      ],
+      "text": " you think it assesses the candidate's performance? Just overall, how do you feel your answer would"
+    },
+    {
+      "timestamp": [
+        1092.56,
+        1096.58
+      ],
+      "text": " kind of like fit in into like a broader Facebook interview? I mean, I'm not sure about the broader"
+    },
+    {
+      "timestamp": [
+        1096.58,
+        1101.42
+      ],
+      "text": " Facebook interview. But I guess this, I mean, this question is pretty, it seems very standard,"
+    },
+    {
+      "timestamp": [
+        1109.02,
+        1113.84
+      ],
+      "text": " like, it's very machine learning, right? You test your knowledge of minority, like when you have very few things you're predicting, you have to sort of build the model, but you go from end to end. And I think it's also, to me, seems like a fairly common"
+    },
+    {
+      "timestamp": [
+        1113.84,
+        1118.44
+      ],
+      "text": " problem you might face. Not this specific one, but something like this, where, you know, you need to"
+    },
+    {
+      "timestamp": [
+        1118.44,
+        1123.32
+      ],
+      "text": " identify something from a particular listing, a particular post, or some, you know, in my case,"
+    },
+    {
+      "timestamp": [
+        1129.12,
+        1129.22
+      ],
+      "text": " I deal with videos a lot. And so it's, it's like in line with, I think what, what you also might have to work on."
+    },
+    {
+      "timestamp": [
+        1129.5,
+        1129.58
+      ],
+      "text": " Yeah."
+    },
+    {
+      "timestamp": [
+        1130.26,
+        1130.4
+      ],
+      "text": " What were your thoughts?"
+    },
+    {
+      "timestamp": [
+        1130.72,
+        1130.88
+      ],
+      "text": " Do you have any?"
+    },
+    {
+      "timestamp": [
+        1131.08,
+        1131.16
+      ],
+      "text": " Yeah."
+    },
+    {
+      "timestamp": [
+        1134.28,
+        1134.62
+      ],
+      "text": " I mean, I liked it a lot and I liked your answer and how you structured everything."
+    },
+    {
+      "timestamp": [
+        1147.82,
+        1149.6
+      ],
+      "text": " And I feel like that's a great approach for most machine learning type questions as well, because I feel like most of them have a very defined beginning, middle, and end in terms of where's the data, how do you build the model and then how would you deploy and evaluate it?"
+    },
+    {
+      "timestamp": [
+        1149.88,
+        1152.56
+      ],
+      "text": " And I think focusing on those approaches is really key."
+    },
+    {
+      "timestamp": [
+        1152.56,
+        1153.96
+      ],
+      "text": " And so I think you did a great job there."
+    },
+    {
+      "timestamp": [
+        1154.04,
+        1154.4
+      ],
+      "text": " Yeah."
+    },
+    {
+      "timestamp": [
+        1154.68,
+        1154.94
+      ],
+      "text": " Good."
+    },
+    {
+      "timestamp": [
+        1155.48,
+        1155.8
+      ],
+      "text": " Awesome."
+    }
+  ]
+}

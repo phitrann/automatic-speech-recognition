@@ -32,6 +32,10 @@ RESUME_VIDEO_ID = (
     ""  # resume downloading from this video, set empty string to start over
 )
 
+# TODO
+# "FpuiovvSPYc": 2 SPEAKER VIDEO
+# : VIDEO IN ASSESSMENT
+
 
 def fetch_video_ids(channel_id, search_start_time):  # load video ids in the channel
     youtube = build(
@@ -179,6 +183,7 @@ def parse_subtitle(subtitle):
 
 
 def download_and_parse_subtitle(url, filename, postfix):
+    # DEPRECATED: dont work for automatic captions
     download_subtitle(url, filename, postfix)
     with open(
         "{}/{}-{}.vtt".format(my_config.SUBTITLE_RAW_PATH, filename, postfix), "r"
@@ -280,17 +285,19 @@ def download(vid_list):
                             sub_url = get_subtitle_url(
                                 info.get("subtitles"), language, "vtt"
                             )
-                            download_and_parse_subtitle(
-                                sub_url, vid, language
-                            )  # download_subtitle(sub_url, vid, language)
+                            # download_and_parse_subtitle(
+                            #     sub_url, vid, language
+                            # )
+                            download_subtitle(sub_url, vid, language)
                             sub_count += 1
                         elif info.get("automatic_captions") != {}:
                             auto_sub_url = get_subtitle_url(
                                 info.get("automatic_captions"), language, "vtt"
                             )
-                            download_and_parse_subtitle(
-                                auto_sub_url, vid, language + "-auto"
-                            )  # download_subtitle(auto_sub_url, vid, language+"-auto")
+                            # download_and_parse_subtitle(
+                            #     auto_sub_url, vid, language + "-auto"
+                            # )
+                            download_subtitle(auto_sub_url, vid, language + "-auto")
 
                         log.write("{} - downloaded\n".format(str(vid)))
                         download_count += 1
@@ -299,9 +306,6 @@ def download(vid_list):
                 log.write("{} - skipped\n".format(str(info.get("id"))))
                 skip_count += 1
 
-        assert len(os.listdir(my_config.AUDIO_RAW_PATH)) == len(
-            os.listdir(my_config.SUBTITLE_RAW_PATH)
-        ), "audio and subtitle files are not matched"
         print("  downloaded: {}, skipped: {}".format(download_count, skip_count))
 
     log.write("\nno of subtitles : {}\n".format(sub_count))
@@ -330,7 +334,7 @@ def main():
         vid_list = fetch_video_ids(
             my_config.YOUTUBE_CHANNEL_ID, my_config.VIDEO_SEARCH_START_DATE
         )
-        # vid_list = ["54AYOd5S7uo", "Y8tlFLIjyMU"]
+        # vid_list =
         wf = open("video_ids.txt", "w")
         for j in vid_list:
             wf.write(str(j))
@@ -349,10 +353,12 @@ def main():
     print("finished downloading videos")
 
     print("removing unnecessary subtitles...")
-    for f in glob.glob(f"{my_config.AUDIO_RAW_PATH}/*.en.vtt") + glob.glob(
-        f"{my_config.SUBTITLE_RAW_PATH}/*.vtt"
-    ):
+    for f in glob.glob(f"{my_config.AUDIO_RAW_PATH}/*.en.vtt"):
         os.remove(f)
+
+    assert len(os.listdir(my_config.AUDIO_RAW_PATH)) == len(
+        os.listdir(my_config.SUBTITLE_RAW_PATH)
+    ), "audio and subtitle files are not matched"
 
 
 def test_fetch():

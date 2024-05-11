@@ -20,10 +20,21 @@ Youtube API is free, just have quota limit: https://github.com/ThioJoe/YT-Spamme
 
 ### Collect data
 ```bash
-   python /src/asr/download_data.py
+    python /src/asr/collect_data.py
+```
+
+### Process data
+```bash
+    python /src/asr/parser.py
 ```
 
 ### Clean up data
 ```bash
     ./clean_up.sh
 ```
+
+## References
+- https://github.com/youngwoo-yoon/youtube-gesture-dataset/blob/master/script/download_video.py
+- https://github.com/EgorLakomkin/KTSpeechCrawler/blob/master/crawler/process.py
+- https://github.com/glut23/webvtt-py/tree/master
+- https://github.com/Uberi/speech_recognition
