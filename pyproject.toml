@@ -13,15 +13,17 @@ dependencies = [
     "apiclient>=1.0.4",
     "google-api-python-client>=2.128.0",
     "pydub>=0.25.1",
-    "transformers>=4.40.2",
-    "datasets>=2.19.1",
+    "transformers==4.39.3",
+    "accelerate==0.30.0",
+    "datasets==2.19.1",
     "torch==1.13.1",
     "torchaudio==0.13.1",
     "torchvision==0.14.1",
-    "accelerate",
+    "mlflow==2.12.1",
+    "levenshtein",
 ]
 
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "MIT"}
 
@@ -46,4 +48,4 @@ requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
 [tool.pdm]
-distribution = true
+distribution = false

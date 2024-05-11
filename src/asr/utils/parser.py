@@ -4,7 +4,7 @@ import json
 import os
 import copy
 import shutil
-from utils import extract_audio_part_segment, get_ts_seconds
+from asr.utils.utils import extract_audio_part_segment, get_ts_seconds
 from pathlib import Path
 import datetime
 
@@ -17,8 +17,9 @@ import tempfile
 
 # from Levenshtein import *
 import Levenshtein
-from webvtt import WebVTT
+from asr.utils.webvtt import WebVTT
 import config as cfg
+
 
 if not os.path.exists(cfg.AUDIO_PROCESSED_PATH) or not os.path.exists(
     cfg.SUBTITLE_PROCESSED_PATH
@@ -413,9 +414,3 @@ def google_speech_test(timings, threshold=0.65, samples=2, min_duration=2.5):
         Levenshtein.ratio(t["phrase"].lower(), s.lower()) for (t, s) in transcripts
     ]
     return np.mean(overlap_ratio) > threshold
-
-
-subtitles = parse_subtitle(f"{cfg.SUBTITLE_RAW_PATH}/{cfg.TWO_PEOPLE_ID}-en-auto.vtt")
-with open(f"{cfg.SUBTITLE_PROCESSED_PATH}/{cfg.TWO_PEOPLE_ID}.json", "w+") as f:
-    json.dump(subtitles, f, indent=2, default=str)
-# print(subtitles[:2])

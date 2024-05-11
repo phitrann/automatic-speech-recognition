@@ -29,12 +29,13 @@ YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
 
 RESUME_VIDEO_ID = (
-    ""  # resume downloading from this video, set empty string to start over
+    "54AYOd5S7uo"  # resume downloading from this video, set empty string to start over
 )
+
 
 # TODO
 # "FpuiovvSPYc": 2 SPEAKER VIDEO
-# : VIDEO IN ASSESSMENT
+# ["54AYOd5S7uo", "Y8tlFLIjyMU"]: VIDEO IN ASSESSMENT
 
 
 def fetch_video_ids(channel_id, search_start_time):  # load video ids in the channel
