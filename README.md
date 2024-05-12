@@ -3,7 +3,13 @@
 ## Dependencies
 ```bash
     sudo apt-get install ffmpeg
-    cd <PATH_TO_UNQLIB_DIR>
+
+    pip install git+https://github.com/m-bain/whisperX.git@78dcfaab51005aa703ee21375f81ed31bc248560
+    pip install dora-search lameenc openunmix wget Cython
+    pip install --no-build-isolation "nemo_toolkit[asr]==1.23.0"
+    pip install --no-deps git+https://github.com/facebookresearch/demucs#egg=demucs
+    pip install git+https://github.com/oliverguhr/deepmultilingualpunctuation.git
+    pip install ctranslate2==3.24.0
 
     # Install in editable mode to avoid constant re-installation
     # Also include all optional dependencies

@@ -1,0 +1,1095 @@
+﻿1
+00:00:10,060 --> 00:00:10,748
+Speaker 1: Hello, everyone.
+
+2
+00:00:10,868 --> 00:00:14,190
+Speaker 1: Welcome back to another round of Turing Mock Interviews.
+
+3
+00:00:14,550 --> 00:00:17,011
+Speaker 1: I am José and I'm a tech leader at Turing.
+
+4
+00:00:17,372 --> 00:00:28,177
+Speaker 1: I'm from Montreal, Canada, and at Turing, I work on the hiring team, helping them to hire the best engineers by helping with the vetting process.
+
+5
+00:00:28,557 --> 00:00:33,400
+Speaker 1: I have more than seventeen years of experience and my expertise lies in JavaScript.
+
+6
+00:00:33,960 --> 00:00:40,384
+Speaker 1: Today, I will be interviewing Victor for the role of an experienced Node.js developer.
+
+7
+00:00:40,404 --> 00:00:42,246
+Speaker 1: Okay, let's hear from Victor.
+
+8
+00:00:42,266 --> 00:00:43,206
+Speaker 1: Hello, Victor.
+
+9
+00:00:43,226 --> 00:00:43,987
+Speaker 1: How are you doing?
+
+10
+00:00:44,367 --> 00:00:45,888
+Speaker 1: And how is your day doing so far?
+
+11
+00:00:45,908 --> 00:00:47,749
+Speaker 0: Hi, Guzzi.
+
+12
+00:00:47,850 --> 00:00:48,530
+Speaker 0: I'm doing good.
+
+13
+00:00:49,150 --> 00:00:49,711
+Speaker 0: How are you, too?
+
+14
+00:00:51,326 --> 00:00:51,987
+Speaker 1: I'm doing great.
+
+15
+00:00:52,067 --> 00:00:53,048
+Speaker 1: So thanks for asking.
+
+16
+00:00:53,228 --> 00:01:04,040
+Speaker 1: So could you please introduce yourself and tell me a little bit about your experience, your past project and what kind of language framework have you been working with?
+
+17
+00:01:04,721 --> 00:01:05,762
+Speaker 1: And then I can take from there.
+
+18
+00:01:07,143 --> 00:01:08,505
+Speaker 0: Yes, I am Victor.
+
+19
+00:01:08,665 --> 00:01:09,967
+Speaker 0: I'm from Nigeria.
+
+20
+00:01:11,230 --> 00:01:13,151
+Speaker 0: I am a full stack developer.
+
+21
+00:01:13,171 --> 00:01:16,792
+Speaker 0: I've been developing for about six years now.
+
+22
+00:01:17,492 --> 00:01:23,055
+Speaker 0: I started my journey into the tech world by working as a backend developer.
+
+23
+00:01:23,915 --> 00:01:27,476
+Speaker 0: I had started writing Python and Django framework.
+
+24
+00:01:27,976 --> 00:01:34,259
+Speaker 0: At the time I was building, deploying machine learning models to the web using Django.
+
+25
+00:01:35,052 --> 00:01:40,015
+Speaker 0: After two years down my career, I joined a fintech company.
+
+26
+00:01:40,495 --> 00:01:44,337
+Speaker 0: In the company, I picked up JavaScript and started writing Node.js and React.
+
+27
+00:01:45,018 --> 00:01:53,642
+Speaker 0: I was responsible for building various financial APIs and dashboard internal tools to help my colleagues work.
+
+28
+00:01:54,843 --> 00:02:03,628
+Speaker 0: Fast forward five years from then, I have been working steadily with JavaScript and Node.js, and consequently, JavaScript and Node.js are my strengths.
+
+29
+00:02:04,485 --> 00:02:04,865
+Speaker 0: Thank you.
+
+30
+00:02:05,786 --> 00:02:06,107
+Speaker 1: Nice.
+
+31
+00:02:06,507 --> 00:02:07,047
+Speaker 1: All right.
+
+32
+00:02:07,148 --> 00:02:10,471
+Speaker 1: So you can see that you have worked hard to be here today, right?
+
+33
+00:02:11,095 --> 00:02:15,998
+Speaker 1: So Python, Django, React.js, and Node.js, right?
+
+34
+00:02:16,358 --> 00:02:18,819
+Speaker 1: So you'll never get out of job for sure.
+
+35
+00:02:19,020 --> 00:02:19,360
+Speaker 1: I can't.
+
+36
+00:02:19,800 --> 00:02:20,060
+Speaker 1: Yeah.
+
+37
+00:02:20,620 --> 00:02:21,581
+Speaker 1: All right.
+
+38
+00:02:21,981 --> 00:02:22,261
+Speaker 1: Okay.
+
+39
+00:02:22,301 --> 00:02:30,306
+Speaker 1: So I see you have a lot of experience with back-end, front-end, Python, Django, Node.js, React.js.
+
+40
+00:02:30,406 --> 00:02:31,827
+Speaker 1: This is quite a lot.
+
+41
+00:02:32,207 --> 00:02:32,507
+Speaker 1: Okay.
+
+42
+00:02:32,847 --> 00:02:35,329
+Speaker 1: So first of all, which one do you prefer?
+
+43
+00:02:36,573 --> 00:02:40,795
+Speaker 0: Wow, yeah, that's a tricky question for me, but I would do well to answer it.
+
+44
+00:02:40,975 --> 00:02:45,078
+Speaker 0: So I started writing Python and kind of fell in love with Python.
+
+45
+00:02:45,378 --> 00:02:51,661
+Speaker 0: However, over the years, I've used more production applications using JavaScript and .
+
+46
+00:02:51,661 --> 00:02:57,804
+Speaker 0: So if I were building some fun projects just for myself, I would maybe pick Python.
+
+47
+00:02:57,844 --> 00:03:08,309
+Speaker 0: But if I wanted to come up, hit the ground fast, and build something that works, that would be deployed in production, I would always reach out for NewJS, React, and JavaScript essentially.
+
+48
+00:03:08,429 --> 00:03:10,690
+Speaker 0: So in a way, I would say JavaScript.
+
+49
+00:03:12,351 --> 00:03:12,831
+Speaker 1: That's it.
+
+50
+00:03:12,891 --> 00:03:15,912
+Speaker 1: That's a smart answer because this position is for JavaScript, right?
+
+51
+00:03:15,952 --> 00:03:18,753
+Speaker 1: If you say Python, okay, so you're not going.
+
+52
+00:03:19,506 --> 00:03:21,547
+Speaker 1: Okay, I'm kidding, I'm kidding.
+
+53
+00:03:22,948 --> 00:03:37,058
+Speaker 1: All right, so could you please tell me, let's see, could you please tell me or describe a few projects or, I mean, the best project that you have been, that you work with JavaScript, for example?
+
+54
+00:03:38,246 --> 00:03:44,411
+Speaker 0: All right, so outside the project I worked with I worked on why I was working in the fintech company.
+
+55
+00:03:44,991 --> 00:03:47,553
+Speaker 0: so here's the problem statement.
+
+56
+00:03:48,714 --> 00:03:55,319
+Speaker 0: The company has a source bank account and the company has a multiple destination bank account.
+
+57
+00:03:56,219 --> 00:04:03,665
+Speaker 0: Over time, money comes into the company from the source bank account into the source bank account, but then, in order to help.
+
+58
+00:04:04,105 --> 00:04:13,472
+Speaker 0: to perform transaction, money has to move into the destination's bank account at specific time and in specific percentages.
+
+59
+00:04:14,233 --> 00:04:39,411
+Speaker 0: So I was tasked to build an API that would be controlled by a dashboard that I also built that would enable the users customize how much percentage of money would go from the source bank account to various um destination bank account and also they would also be able to control how frequently um funds is deducted from the source account to destination account.
+
+60
+00:04:39,911 --> 00:04:46,293
+Speaker 0: so the project involved me writing background jobs using luchas and also ready for caching and all that.
+
+61
+00:04:46,673 --> 00:04:48,033
+Speaker 0: so it was a very fun project.
+
+62
+00:04:48,213 --> 00:04:51,995
+Speaker 0: i went about scheduling jobs and cleaning up jobs and all.
+
+63
+00:04:52,115 --> 00:04:53,195
+Speaker 0: yeah so that was it.
+
+64
+00:04:53,957 --> 00:04:56,559
+Speaker 1: nice nice good to mention that good mention.
+
+65
+00:04:56,619 --> 00:04:57,880
+Speaker 1: red is node.js.
+
+66
+00:04:59,101 --> 00:05:01,622
+Speaker 1: uh okay so let's get it started.
+
+67
+00:05:01,682 --> 00:05:07,546
+Speaker 1: okay um this is really interesting project and i see you have a great background.
+
+68
+00:05:07,566 --> 00:05:11,028
+Speaker 1: okay uh let's go to the node.js questions.
+
+69
+00:05:11,269 --> 00:05:12,329
+Speaker 1: okay all right.
+
+70
+00:05:13,330 --> 00:05:21,035
+Speaker 1: um i would like to ask you okay for example uh node.js for first.
+
+71
+00:05:21,075 --> 00:05:23,637
+Speaker 1: first of all node.js is single thread or multi application.
+
+72
+00:05:25,717 --> 00:05:33,505
+Speaker 0: it's a single javascript is a single traded language, however, node.js allows javascript to be able to run.
+
+73
+00:05:34,627 --> 00:05:40,353
+Speaker 0: However, node.js kind of augments the fact that javascript is single traded by providing an event.
+
+74
+00:05:40,553 --> 00:05:44,517
+Speaker 0: so while javascript is single traded, you can run.
+
+75
+00:05:44,998 --> 00:05:47,501
+Speaker 0: you can perform concurrent operations using node.js.
+
+76
+00:05:49,446 --> 00:05:54,429
+Speaker 0: node.js and the event loop right and yes node.js and the event loop.
+
+77
+00:05:54,550 --> 00:05:57,712
+Speaker 1: so yeah okay great that's a good answer.
+
+78
+00:05:58,072 --> 00:05:59,113
+Speaker 1: well what else?
+
+79
+00:05:59,853 --> 00:06:11,081
+Speaker 1: uh if as you mentioned node.js is a single thread okay application uh it goes to one single core and stay there forever right until we reset it.
+
+80
+00:06:11,781 --> 00:06:19,712
+Speaker 1: My question for you is, how can we make Node.js or multi-threading or simulate multi-threading with Node.js?
+
+81
+00:06:20,653 --> 00:06:28,059
+Speaker 0: Yes, so Node.js comes with a tool or called fork.
+
+82
+00:06:28,419 --> 00:06:29,199
+Speaker 0: So which forks?
+
+83
+00:06:29,620 --> 00:06:32,882
+Speaker 0: So generally, a fork is used to spawn shared processes.
+
+84
+00:06:33,782 --> 00:06:40,186
+Speaker 0: In Node.js, it is used to create a new instance of the VEAD engine to run multiple workers to execute code.
+
+85
+00:06:40,647 --> 00:06:51,794
+Speaker 0: So by creating a fork, Node.js can spread these operations via the multiple workers of the various cores of the host machine, essentially.
+
+86
+00:06:54,127 --> 00:06:58,592
+Speaker 1: yeah kind of yeah yeah no that that's that's okay.
+
+87
+00:06:58,852 --> 00:06:59,973
+Speaker 1: yeah i kind of that.
+
+88
+00:07:00,634 --> 00:07:06,200
+Speaker 1: and uh um have you ever heard about v-eight engine?
+
+89
+00:07:07,561 --> 00:07:08,122
+Speaker 0: yes i have.
+
+90
+00:07:08,502 --> 00:07:13,227
+Speaker 0: it's one of the javascript engines provided by google nice.
+
+91
+00:07:13,447 --> 00:07:15,069
+Speaker 1: and why no js uses v-eight.
+
+92
+00:07:16,210 --> 00:07:26,666
+Speaker 0: so um essentially when via engine is an option is an open source engine within in C++ and developed by Google.
+
+93
+00:07:27,186 --> 00:07:30,528
+Speaker 0: it runs in Google chrome, unlike other engines, it is.
+
+94
+00:07:31,641 --> 00:07:34,663
+Speaker 0: also utilized for Pop!One Node.js runtime.
+
+95
+00:07:34,963 --> 00:07:40,046
+Speaker 0: So VH was initially intended to improve the speed of JavaScript execution within browsers.
+
+96
+00:07:40,746 --> 00:07:47,790
+Speaker 0: Instead of employing an interpreter, VH converts JavaScript code into more efficient machine code to increase performance.
+
+97
+00:07:48,450 --> 00:07:54,433
+Speaker 0: It turns JavaScript code into machine code during execution by utilizing just-in-time compiler.
+
+98
+00:07:56,010 --> 00:08:04,753
+Speaker 0: So, um, in order to run JavaScript on the server side, uh, with, um, on the server side, speed is essential.
+
+99
+00:08:05,013 --> 00:08:12,496
+Speaker 0: And with VH, JavaScript, uh, with VS just in time compilation, JavaScript can be run faster on the server side.
+
+100
+00:08:12,576 --> 00:08:14,336
+Speaker 0: And that's why Node.js uses VH.
+
+101
+00:08:16,397 --> 00:08:16,537
+Speaker 1: Cool.
+
+102
+00:08:17,659 --> 00:08:18,800
+Speaker 1: Thank you for this answer.
+
+103
+00:08:20,121 --> 00:08:20,662
+Speaker 1: Let's see.
+
+104
+00:08:22,603 --> 00:08:23,264
+Speaker 1: Let's see.
+
+105
+00:08:23,364 --> 00:08:27,627
+Speaker 1: So you mentioned the event loop Node.js, okay?
+
+106
+00:08:27,707 --> 00:08:31,751
+Speaker 1: Could you explain to me what is the event loop?
+
+107
+00:08:32,712 --> 00:08:32,932
+Speaker 0: Yes.
+
+108
+00:08:33,251 --> 00:08:39,457
+Speaker 0: So the event loop is what allows Node.js to perform non-blocking IEO operations.
+
+109
+00:08:40,337 --> 00:08:49,547
+Speaker 0: So despite the fact that JavaScript is single-threaded, Usually, by affording operations to the system kernel whenever possible.
+
+110
+00:08:51,008 --> 00:08:58,631
+Speaker 0: Since most kernels are multi-threaded, they can have multiple operations executed in the background.
+
+111
+00:08:59,252 --> 00:09:05,915
+Speaker 0: When one of these operations completes, the kernel tells Node.js so that the appropriate callback can be added to the POQ.
+
+112
+00:09:06,975 --> 00:09:15,562
+Speaker 0: essentially the event loop is the mechanism to which node.js uses a single traded language of javascript to still perform multiple operations.
+
+113
+00:09:16,503 --> 00:09:18,645
+Speaker 0: that's it and i mean the event loop.
+
+114
+00:09:18,685 --> 00:09:19,846
+Speaker 0: there are different phases.
+
+115
+00:09:20,006 --> 00:09:21,707
+Speaker 0: i could go on and elaborate about it.
+
+116
+00:09:21,908 --> 00:09:25,310
+Speaker 1: we have yeah i'm good i'm good i'm good with this.
+
+117
+00:09:25,350 --> 00:09:28,153
+Speaker 1: yeah uh this kind of question is just to know.
+
+118
+00:09:28,553 --> 00:09:35,277
+Speaker 1: uh if you are familiarized with The engine with node.js, you know, yeah.
+
+119
+00:09:35,898 --> 00:09:38,659
+Speaker 1: Okay, this one is a classic question.
+
+120
+00:09:38,879 --> 00:09:44,343
+Speaker 1: Okay, classic node.js question that you'll be asking a lot during the interview like this.
+
+121
+00:09:45,924 --> 00:09:48,925
+Speaker 1: My question is, what do you understand about callbacks?
+
+122
+00:09:51,407 --> 00:09:58,131
+Speaker 0: All right, so callbacks are a way of, in node.js, a way of performing an operation asynchronously.
+
+123
+00:09:58,171 --> 00:10:10,755
+Speaker 0: So callbacks are essentially functions that are passed into um another function or any other asynchronous process to be called at the later time and that time is usually indeterminate.
+
+124
+00:10:11,295 --> 00:10:12,996
+Speaker 0: um but um.
+
+125
+00:10:13,056 --> 00:10:23,440
+Speaker 0: so the callback those functions are registered with event loop and at the later time they will be called nice and have you ever heard about callback health?
+
+126
+00:10:24,212 --> 00:10:32,361
+Speaker 0: Yeah, callback health is a problem that arises usually when developers try to implement asynchronous processes one after the other.
+
+127
+00:10:33,162 --> 00:10:37,988
+Speaker 0: So there are lots of ways to solve callback health.
+
+128
+00:10:38,829 --> 00:10:45,036
+Speaker 0: More recently, you could use async-await, but the general strategy is modularization.
+
+129
+00:10:45,536 --> 00:10:53,723
+Speaker 0: you can break up callbacks into independent functions and another strategy is to use a control library that is like async.
+
+130
+00:10:54,123 --> 00:10:59,367
+Speaker 0: or however more recently you can use the new escs feature async await.
+
+131
+00:10:59,927 --> 00:11:06,753
+Speaker 0: another way of reducing or eliminating callback here is to use a javascript generators with promises.
+
+132
+00:11:08,072 --> 00:11:11,976
+Speaker 1: nice generators nice all right great answer all right.
+
+133
+00:11:12,016 --> 00:11:19,503
+Speaker 1: so um let's see uh what kind of framework uh have been used with node.js?
+
+134
+00:11:20,784 --> 00:11:24,828
+Speaker 0: yeah i'm familiar with a couple of frameworks with node.js um i've used.
+
+135
+00:11:24,848 --> 00:11:30,734
+Speaker 0: i've worked with express i've worked with core i've also worked with nest.js.
+
+136
+00:11:32,482 --> 00:11:38,425
+Speaker 0: Those are essentially the ones that I've worked very much with and quick proficiency in.
+
+137
+00:11:39,425 --> 00:11:39,685
+Speaker 1: Nice.
+
+138
+00:11:40,105 --> 00:11:41,046
+Speaker 1: Okay, great.
+
+139
+00:11:41,226 --> 00:11:41,786
+Speaker 1: That's great.
+
+140
+00:11:43,007 --> 00:11:48,329
+Speaker 1: What's the difference between ExpressJS and NestJS, for example?
+
+141
+00:11:49,517 --> 00:11:55,405
+Speaker 0: So XpressJS is a framework on Node.js, just like NestJS.
+
+142
+00:11:55,705 --> 00:12:00,051
+Speaker 0: However, XpressJS is more world-level.
+
+143
+00:12:00,632 --> 00:12:11,468
+Speaker 0: It gives you more exposure to the internal workings of James Forrest, Norcal PTACC, Norcal PTACC, Not just have no just call library and also, it is not it's on opinionated.
+
+144
+00:12:11,768 --> 00:12:11,868
+Speaker 0: so.
+
+145
+00:12:11,888 --> 00:12:27,135
+Speaker 0: James Forrest, Norcal PTACC, Norcal PTACC, Whereas messages is the higher level framework, which can also be used with messages or classify messages is more opinionated and introduces advanced concept like dependency injection and.
+
+146
+00:12:27,555 --> 00:12:32,016
+Speaker 0: has some certain ideas or opinion on how to structure your code.
+
+147
+00:12:33,137 --> 00:12:43,060
+Speaker 0: NestJS should be prioritized or should be used in where you want to build a very large application and you want to achieve structure and the code that would be maintainable over time.
+
+148
+00:12:43,200 --> 00:12:47,741
+Speaker 0: However, if you want something quick and small, I would go with ExpressJS.
+
+149
+00:12:49,642 --> 00:12:50,482
+Speaker 1: Okay, great.
+
+150
+00:12:51,642 --> 00:12:54,983
+Speaker 1: You mentioned dependency injection, okay.
+
+151
+00:12:55,704 --> 00:12:56,904
+Speaker 1: What's dependency injection?
+
+152
+00:12:57,816 --> 00:13:15,305
+Speaker 0: So dependency injection is a mechanism that allows the framework to be able to identify certain tokens or services that have been pre-configured in the code and inject it into other services in runtime.
+
+153
+00:13:15,746 --> 00:13:35,996
+Speaker 0: So instead of the writing manual code to instantiate objects and pass it to various functions, the developer can more or less write the services and the functions, and then the dependency injection engine would take appropriate classes and instantiate, create an instance of it at the time when it needs it.
+
+154
+00:13:36,977 --> 00:13:43,740
+Speaker 0: And so in that sense, it makes the code a bit more declarative and instead of imperative.
+
+155
+00:13:44,561 --> 00:13:50,746
+Speaker 0: So it's also a medium for for allowing you to write more decoupled codes.
+
+156
+00:13:51,867 --> 00:13:52,127
+Speaker 1: Nice.
+
+157
+00:13:52,567 --> 00:13:52,927
+Speaker 1: Okay.
+
+158
+00:13:53,468 --> 00:13:53,728
+Speaker 1: All right.
+
+159
+00:13:53,988 --> 00:13:54,889
+Speaker 1: And let's see.
+
+160
+00:13:55,489 --> 00:13:58,912
+Speaker 1: What do you understand about streaming in Node.js?
+
+161
+00:14:00,433 --> 00:14:00,894
+Speaker 0: Streaming.
+
+162
+00:14:01,214 --> 00:14:15,946
+Speaker 0: So streaming is a way of managing data or passing or working with data that allows data to be processed without being read completely into the memory.
+
+163
+00:14:16,426 --> 00:14:25,753
+Speaker 0: For example, if you have a large collection of data, it might not be pragmatic to read all the data into memory before processing it.
+
+164
+00:14:26,174 --> 00:14:32,479
+Speaker 0: But when you employ streaming, you can read the data chunk by chunk and process small chunks at a time.
+
+165
+00:14:32,879 --> 00:14:37,322
+Speaker 0: In that way, you can circumvent the memory constraint of the system.
+
+166
+00:14:41,297 --> 00:14:47,863
+Speaker 0: So, Node.js, many of the Node.js core libraries like the event emitters are built around streams.
+
+167
+00:14:49,064 --> 00:14:49,764
+Speaker 1: Okay, great.
+
+168
+00:14:50,865 --> 00:14:52,727
+Speaker 1: I'm glad that you mentioned event emitters.
+
+169
+00:14:52,907 --> 00:14:55,369
+Speaker 1: So, what are event emitters?
+
+170
+00:14:55,429 --> 00:14:57,210
+Speaker 1: What do you understand about event emitters?
+
+171
+00:14:58,091 --> 00:15:09,601
+Speaker 0: So, event emitters are a way of writing... Okay, in the situations we have used event emitters, event emitters are used to write more decoupled codes.
+
+172
+00:15:10,214 --> 00:15:21,170
+Speaker 0: So essentially, the way it works, there is an event is dispatched, and there is a listener function that is registered with that event.
+
+173
+00:15:21,811 --> 00:15:32,319
+Speaker 0: So whenever an action happens and an event is dispatched, all the waste in us which are just functions registered to the event are executed.
+
+174
+00:15:32,799 --> 00:15:37,560
+Speaker 0: So from a programmer's perspective, it can allow you to write code that is decoupled.
+
+175
+00:15:37,801 --> 00:15:48,864
+Speaker 0: Let's say you want to communicate across services without having to import all the implementation detail of one service into another file, you can use event emitters to communicate synchronously.
+
+176
+00:15:51,300 --> 00:15:59,327
+Speaker 1: And what's the difference between event emitters and publisher and subscriber design pattern?
+
+177
+00:16:01,889 --> 00:16:08,754
+Speaker 0: So event emitters, there are more similarities than there are differences.
+
+178
+00:16:09,215 --> 00:16:31,532
+Speaker 0: However, what I would say is for publisher and subscriber design pattern, there needs to be an established topic in which all publishers will publish to, then the subscribers will be registered on the same topic and listening for messages coming from that topic.
+
+179
+00:16:32,133 --> 00:16:33,475
+Speaker 0: That's my understanding.
+
+180
+00:16:34,076 --> 00:16:39,859
+Speaker 0: But yeah and then also the use cases kind of present some differences.
+
+181
+00:16:40,319 --> 00:16:43,021
+Speaker 0: so but we just describe a pattern.
+
+182
+00:16:43,261 --> 00:16:45,122
+Speaker 0: most times can be used across.
+
+183
+00:16:46,462 --> 00:17:01,450
+Speaker 0: Various services across the across http protocol whereby we have this script publisher and one service, and this is quite by another service, however, event emitters their scope of communications is limited within the same.
+
+184
+00:17:02,311 --> 00:17:08,275
+Speaker 0: So maybe you have one service in one file and you want to publish an event to another service in another file.
+
+185
+00:17:09,096 --> 00:17:10,436
+Speaker 0: So that's my understanding.
+
+186
+00:17:11,157 --> 00:17:12,038
+Speaker 1: Makes sense.
+
+187
+00:17:12,699 --> 00:17:13,219
+Speaker 1: Makes sense.
+
+188
+00:17:13,780 --> 00:17:14,140
+Speaker 1: All right.
+
+189
+00:17:14,200 --> 00:17:18,502
+Speaker 1: So what kind of database are you familiar with Node.js?
+
+190
+00:17:18,904 --> 00:17:21,005
+Speaker 1: I mean, not with Node.js at all.
+
+191
+00:17:21,665 --> 00:17:23,146
+Speaker 1: What kind of database are you familiar with?
+
+192
+00:17:23,867 --> 00:17:28,972
+Speaker 0: So I've worked with PostgreSQL and I've worked with MongoDB.
+
+193
+00:17:29,551 --> 00:17:35,353
+Speaker 0: However, I would say I'm more familiar with MongoDB than PostgreSQL with Node.js.
+
+194
+00:17:36,833 --> 00:17:44,075
+Speaker 0: So while working with PostgreSQL with Node.js, most of the time I've used the OLMs, object relational mappers.
+
+195
+00:17:44,935 --> 00:17:51,857
+Speaker 0: However, and also while working with Mongo, I used the Mongo's ODM object data mapper.
+
+196
+00:17:52,617 --> 00:17:58,039
+Speaker 0: So in terms of proficiency, MongoDB is where I'm more proficient at.
+
+197
+00:17:59,540 --> 00:18:04,430
+Speaker 1: In your understanding, what's the difference between MongoDB and PostgreSQL?
+
+198
+00:18:05,606 --> 00:18:23,476
+Speaker 0: All right, a major difference between mongodb and postgres is the fact that mongodb is, or rather postgres is a relational database, meaning that it stores data in a structured form in tables that have rows and columns.
+
+199
+00:18:24,136 --> 00:18:31,640
+Speaker 0: However, mongodb is a non-relational database, oftentimes it is also called a new SQL database.
+
+200
+00:18:34,570 --> 00:18:45,100
+Speaker 0: There's some of the differences also between the two come from the fact that there's a standard query language for query Postgres.
+
+201
+00:18:45,400 --> 00:18:49,684
+Speaker 0: That's why Postgres is also for an SQL database.
+
+202
+00:18:50,285 --> 00:18:57,672
+Speaker 0: And whereas MongoDB allows stores this information in key data and I mean, key value pairs.
+
+203
+00:18:58,678 --> 00:19:06,647
+Speaker 0: So in summary, Postgres is a relational database that stores its information in tables in a more structured form.
+
+204
+00:19:08,429 --> 00:19:15,056
+Speaker 0: MongoDB stores its information in a key-value pair, which allows it doesn't have much of structure, but it's more flexible.
+
+205
+00:19:16,348 --> 00:19:22,391
+Speaker 1: I'm going to ask you a few questions related to SQL database and non-SQL database.
+
+206
+00:19:22,451 --> 00:19:23,492
+Speaker 1: in the end, okay?
+
+207
+00:19:23,692 --> 00:19:29,135
+Speaker 1: But for now, I'd like to ask you if you, do you have any experience with WebSockets?
+
+208
+00:19:29,955 --> 00:19:32,937
+Speaker 0: Yes, I have some experience with WebSockets.
+
+209
+00:19:33,437 --> 00:19:41,101
+Speaker 0: Maybe not in a full-scale experience, but I have used some projects with WebSockets, so I can attempt questions in WebSocket.
+
+210
+00:19:41,997 --> 00:19:53,783
+Speaker 1: Nice what's the difference between one application that use web sockets to communicate with the back end and one application that use restful api's to do the same.
+
+211
+00:19:54,844 --> 00:19:59,106
+Speaker 0: So generally web sockets are used when you want to and.
+
+212
+00:19:59,744 --> 00:20:03,567
+Speaker 0: build real time features on a server.
+
+213
+00:20:04,148 --> 00:20:16,438
+Speaker 0: So usually RESTful API works with a request response cycle, meaning that for a server to send information to the client, the client has to first of all, make a request.
+
+214
+00:20:17,222 --> 00:20:34,314
+Speaker 0: But with WebSocket, you kind of introduce a dual method of communication, meaning the client can make a request to the server, and the server, at any time it has data, can push data to the client without the client having to initiate the request.
+
+215
+00:20:34,694 --> 00:20:42,780
+Speaker 0: So with that ability, a real-time application can be built, and WebSocket enables this ability, provides this ability to servers.
+
+216
+00:20:44,707 --> 00:20:44,967
+Speaker 1: Great.
+
+217
+00:20:45,869 --> 00:20:48,172
+Speaker 1: And do you have experience with GraphQL?
+
+218
+00:20:49,634 --> 00:20:51,757
+Speaker 0: Yes, I've had some experience with GraphQL.
+
+219
+00:20:52,578 --> 00:20:52,778
+Speaker 0: Yes.
+
+220
+00:20:54,180 --> 00:20:54,481
+Speaker 1: Okay.
+
+221
+00:20:54,741 --> 00:20:56,523
+Speaker 1: How would you describe GraphQL?
+
+222
+00:20:56,664 --> 00:20:57,405
+Speaker 1: What's GraphQL?
+
+223
+00:20:58,351 --> 00:21:06,854
+Speaker 0: So GraphQL can be, I can describe or exemplify GraphQL by making some comparison with ETH and REST.
+
+224
+00:21:07,114 --> 00:21:13,256
+Speaker 0: So essentially GraphQL was introduced to augment some of the deficiencies of REST framework.
+
+225
+00:21:13,697 --> 00:21:30,724
+Speaker 0: So usually the RESTful framework endpoints are defined ahead of time, payloads that endpoints return are defined ahead of time and the response the shape of the response from the rest to API defined ahead of time with minimal flexibility.
+
+226
+00:21:31,205 --> 00:21:43,970
+Speaker 0: but with GraphQL you're provided an interface in which a client can query the server with very varied payload and can get varied response.
+
+227
+00:21:44,130 --> 00:21:51,573
+Speaker 0: so in a situation where the client wants to just get enough data that it needs it will not be over with it with too much data.
+
+228
+00:21:51,953 --> 00:22:02,958
+Speaker 0: and when a client wants to request for maybe data involving various resources with a single endpoint and with a single query the server the client can make that request.
+
+229
+00:22:03,058 --> 00:22:21,418
+Speaker 0: so essentially GraphQL makes up for RESTful API in terms of introducing flexibility of queries and also decreasing the amount of information that is transferred by the network by allowing the client to specify exactly what he needs and what he doesn't need.
+
+230
+00:22:23,055 --> 00:22:25,776
+Speaker 1: essentially great great all right.
+
+231
+00:22:25,856 --> 00:22:28,417
+Speaker 1: so um we gotta come to the end.
+
+232
+00:22:28,677 --> 00:22:36,840
+Speaker 1: okay before i ask you a few more questions i just like to give uh uh heads up for our fellow developers that are watching this video.
+
+233
+00:22:37,140 --> 00:22:40,761
+Speaker 1: okay so if you are looking for jobs okay uh job opportunities.
+
+234
+00:22:41,241 --> 00:22:44,002
+Speaker 1: i recommend you to go to the website student.com.
+
+235
+00:22:44,042 --> 00:22:44,602
+Speaker 1: slash jobs.
+
+236
+00:22:44,982 --> 00:22:52,626
+Speaker 1: okay you can find jobs by your tech stack And once you find them, so all you need to do is just create your account if you don't have one.
+
+237
+00:22:53,026 --> 00:22:56,968
+Speaker 1: OK, and pass through the vetting process once you pass.
+
+238
+00:22:57,348 --> 00:23:01,030
+Speaker 1: So you find a job as a victor as I did.
+
+239
+00:23:01,050 --> 00:23:07,493
+Speaker 1: OK, and then you start working one hundred percent remotely from the country that you want.
+
+240
+00:23:07,733 --> 00:23:09,494
+Speaker 1: OK, any place in the world.
+
+241
+00:23:10,234 --> 00:23:12,795
+Speaker 1: okay let's go let's just come back for victor.
+
+242
+00:23:12,975 --> 00:23:18,636
+Speaker 1: but before that if you enjoy this content just consider give us the big fake thumbs up and comment down below.
+
+243
+00:23:18,656 --> 00:23:21,117
+Speaker 1: uh what is your tech stack?
+
+244
+00:23:21,277 --> 00:23:23,657
+Speaker 1: okay and what kind of job are you looking for?
+
+245
+00:23:24,297 --> 00:23:26,818
+Speaker 1: okay so we're coming to the end.
+
+246
+00:23:27,058 --> 00:23:29,159
+Speaker 1: okay i just have a few more questions for you.
+
+247
+00:23:30,679 --> 00:23:38,161
+Speaker 1: um so uh how do you keep yourself up to date with node.js?
+
+248
+00:23:39,687 --> 00:23:39,967
+Speaker 0: All right.
+
+249
+00:23:40,367 --> 00:23:48,610
+Speaker 0: So first of all, I have a Medium account and I have daily subscriptions.
+
+250
+00:23:48,790 --> 00:23:57,172
+Speaker 0: So with Medium, you can subscribe to some channels to give you some daily doses of articles written in your favorite stack.
+
+251
+00:23:57,372 --> 00:24:01,273
+Speaker 0: For me, I subscribe to Node.js updates.
+
+252
+00:24:01,693 --> 00:24:07,075
+Speaker 0: So every morning I check my email for the daily dose of Node.js, I read some articles.
+
+253
+00:24:07,915 --> 00:24:10,096
+Speaker 0: just to find out what's more recent.
+
+254
+00:24:10,576 --> 00:24:21,539
+Speaker 0: Then sometimes I occasionally go to the NPM website and just browse for packages to see what is currently being developed by the various, by the community.
+
+255
+00:24:22,120 --> 00:24:29,222
+Speaker 0: Then oftentimes I also take some courses, some professional courses to improve my skills in Node.js.
+
+256
+00:24:29,822 --> 00:24:34,863
+Speaker 0: And then finally, this might sound obvious, but I want to emphasize it.
+
+257
+00:24:35,063 --> 00:24:38,944
+Speaker 0: Just keep practicing, and especially targeted practice.
+
+258
+00:24:39,344 --> 00:24:48,726
+Speaker 0: Whenever I realize that I have some deficiencies or some struggles in a particular area of Node.js, I go to the Node.js documentation.
+
+259
+00:24:49,146 --> 00:24:56,827
+Speaker 0: I try to implement projects that would task my knowledge on such concepts.
+
+260
+00:24:57,188 --> 00:24:59,188
+Speaker 0: So over time, I get better at Node.js.
+
+261
+00:24:59,748 --> 00:25:19,985
+Speaker 0: And then there's always room for improvement in JavaScript because even though Node.js is not exactly JavaScript, even though Node.js is more than JavaScript, getting stronger or better in JavaScript would definitely improve your skills in Node.js.
+
+262
+00:25:20,725 --> 00:25:26,210
+Speaker 0: So those are a few tips that I use to improve my Node.js and JavaScript in general.
+
+263
+00:25:26,830 --> 00:25:27,191
+Speaker 0: Thank you.
+
+264
+00:25:28,117 --> 00:25:28,758
+Speaker 1: Great, Victor.
+
+265
+00:25:28,878 --> 00:25:29,378
+Speaker 1: Thank you.
+
+266
+00:25:30,239 --> 00:25:32,561
+Speaker 1: It was really nice to speak with you today.
+
+267
+00:25:33,362 --> 00:25:41,329
+Speaker 1: And to everybody else, thank you for attending this mock interview with us again, and hope you enjoyed this video as much as I did.
+
+268
+00:25:42,089 --> 00:25:47,714
+Speaker 1: And we'll be back very soon with more episodes like this for any tech stack.
+
+269
+00:25:47,774 --> 00:25:52,298
+Speaker 1: Please comment below what tech stack would like to cover that we cover.
+
+270
+00:25:52,338 --> 00:25:54,060
+Speaker 1: We can create mock interview for that.
+
+271
+00:25:54,580 --> 00:25:58,662
+Speaker 1: and then you can prepare yourself better for this kind of interview.
+
+272
+00:25:58,682 --> 00:26:06,126
+Speaker 1: okay uh please drop your suggestions comments hit the like button subscribe to touring's uh.
+
+273
+00:26:06,166 --> 00:26:13,950
+Speaker 1: youtube channel and don't forget to uh don't forget to to give us the big fat thumbs up for this video if you enjoyed this content.
+
+274
+00:26:13,970 --> 00:26:17,692
+Speaker 1: okay take care stay safe wash your hands and happy coding.
