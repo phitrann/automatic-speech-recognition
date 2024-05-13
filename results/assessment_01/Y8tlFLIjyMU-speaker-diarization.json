@@ -1,0 +1,1929 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Hello, everyone. ",
+      "start": 10060,
+      "end": 10748
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Welcome back to another round of Turing Mock Interviews. ",
+      "start": 10868,
+      "end": 14190
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "I am Jos\u00e9 and I'm a tech leader at Turing. ",
+      "start": 14550,
+      "end": 17011
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "I'm from Montreal, Canada, and at Turing, I work on the hiring team, helping them to hire the best engineers by helping with the vetting process. ",
+      "start": 17351,
+      "end": 28175
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "I have more than seventeen years of experience and my expertise lies in JavaScript. ",
+      "start": 28555,
+      "end": 33397
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Today, I will be interviewing Victor for the role of an experienced Node.js developer. ",
+      "start": 33957,
+      "end": 40403
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Let's hear from Victor. ",
+      "start": 40983,
+      "end": 42244
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Hello, Victor. ",
+      "start": 42264,
+      "end": 43205
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "How are you doing and how is your day doing so far? ",
+      "start": 43225,
+      "end": 45887
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Hi, Guilci. ",
+      "start": 45907,
+      "end": 47749
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "I'm doing good. ",
+      "start": 47869,
+      "end": 48530
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "How are you, too? ",
+      "start": 49150,
+      "end": 49711
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "I'm doing great. ",
+      "start": 51326,
+      "end": 51987
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "So thanks for asking. ",
+      "start": 52067,
+      "end": 53048
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "So could you please introduce yourself and tell me a little bit about your experience, your past project and what kind of language framework have you been working with? ",
+      "start": 53228,
+      "end": 64040
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "And then I can take from there. ",
+      "start": 64721,
+      "end": 65762
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Yes, I am Victor. ",
+      "start": 67143,
+      "end": 68505
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "I'm from Nigeria. ",
+      "start": 68665,
+      "end": 69746
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "I am a full stack developer. ",
+      "start": 71230,
+      "end": 73151
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "I've been developing for about six years now. ",
+      "start": 73171,
+      "end": 76812
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "I started my journey into the tech world by working as a backend developer. ",
+      "start": 77492,
+      "end": 83055
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "I had started writing Python and Django framework. ",
+      "start": 83915,
+      "end": 87476
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "At the time I was building, deploying machine learning models to the web using Django. ",
+      "start": 87976,
+      "end": 94259
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "After two years down my career, I joined a fintech company. ",
+      "start": 95052,
+      "end": 100015
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "In the company, I picked up JavaScript and started writing Node.js and React. ",
+      "start": 100495,
+      "end": 104337
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "I was responsible for building various financial APIs and dashboard internal tools to help my colleagues work. ",
+      "start": 105018,
+      "end": 113642
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Fast forward five years from then, I have been working steadily with JavaScript and Node.js, and consequently, JavaScript and Node.js are my strengths. ",
+      "start": 114843,
+      "end": 123648
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Thank you. ",
+      "start": 124485,
+      "end": 124866
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Nice. ",
+      "start": 125787,
+      "end": 126107
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "All right. ",
+      "start": 126508,
+      "end": 127049
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "So you can see that you have worked hard to be here today, right? ",
+      "start": 127149,
+      "end": 130473
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "So Python, Django, ReactJS, and Node.js, right? ",
+      "start": 131095,
+      "end": 135998
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "So you'll never get out of job for sure. ",
+      "start": 136358,
+      "end": 138819
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "I can't. ",
+      "start": 139020,
+      "end": 139360
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Yeah. ",
+      "start": 139800,
+      "end": 140060
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "All right. ",
+      "start": 140620,
+      "end": 141581
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Okay. ",
+      "start": 141981,
+      "end": 142261
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "So I see you have a lot of experience with back-end, front-end, Python, Django, Node.js, ReactJS. ",
+      "start": 142301,
+      "end": 150306
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "This is quite a lot. ",
+      "start": 150406,
+      "end": 151827
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Okay. ",
+      "start": 152207,
+      "end": 152507
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "So first of all, which one do you prefer? ",
+      "start": 152847,
+      "end": 155329
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Wow, yeah, that's a tricky question for me, but I would do well to answer it. ",
+      "start": 156573,
+      "end": 160795
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So I started writing Python and kind of fell in love with Python. ",
+      "start": 160975,
+      "end": 165078
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "However, over the years, I've used more production applications using JavaScript and . ",
+      "start": 165378,
+      "end": 171661
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So if I were building some fun projects just for myself, I would maybe pick Python. ",
+      "start": 171661,
+      "end": 177804
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "But if I wanted to come up, hit the ground fast, and build something that works, that would be deployed in production, I would always reach out for NewJS, React, and JavaScript essentially. ",
+      "start": 177844,
+      "end": 188329
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So in a way, I would say JavaScript. ",
+      "start": 188429,
+      "end": 190690
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "That's it. ",
+      "start": 192351,
+      "end": 192831
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "That's a smart answer because this position is for JavaScript, right? ",
+      "start": 192891,
+      "end": 195912
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "If you say Python, okay, so you're not going. ",
+      "start": 195952,
+      "end": 198753
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Okay, I'm kidding. ",
+      "start": 199506,
+      "end": 200487
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "I'm kidding. ",
+      "start": 200547,
+      "end": 200987
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "All right. ",
+      "start": 201207,
+      "end": 201547
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "So, all right. ",
+      "start": 201567,
+      "end": 203229
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "So could you please tell me, let's see, could you please tell me or describe a few projects or, I mean, the best project that you have been, that you work with JavaScript, for example? ",
+      "start": 203249,
+      "end": 217058
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "All right, so outside the project I worked with I worked on why I was working in the fintech company. ",
+      "start": 218246,
+      "end": 224411
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "so here's the problem statement. ",
+      "start": 224992,
+      "end": 227554
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "The company has a source bank account and the company has a multiple destination bank account. ",
+      "start": 228715,
+      "end": 235321
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Over time, money comes into the company from the source bank account into the source bank account, but then, in order to help. ",
+      "start": 235661,
+      "end": 243668
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "to perform transaction, money has to move into the destination's bank account at specific time and in specific percentages. ",
+      "start": 244108,
+      "end": 253474
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So I was tasked to build an API that would be controlled by a dashboard that I also built that would enable the users customize how much percentage of money would go from the source bank account to various um destination bank account and also they would also be able to control how frequently um funds is deducted from the source account to destination account. ",
+      "start": 254235,
+      "end": 279412
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "so the project involved me writing background jobs using nudges and also ready for caching and all that. ",
+      "start": 279912,
+      "end": 286295
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "so it was a very fun project. ",
+      "start": 286675,
+      "end": 288036
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "i went about scheduling jobs and cleaning up jobs and all. ",
+      "start": 288216,
+      "end": 291997
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "yeah so that was it nice nice good to mention that good mention. ",
+      "start": 292137,
+      "end": 296559
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "red is node.js. ",
+      "start": 296619,
+      "end": 297880
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "uh okay so let's get it started. ",
+      "start": 299101,
+      "end": 301622
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "okay um this is really interesting project and i see you have a great background. ",
+      "start": 301682,
+      "end": 307546
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "okay uh let's go to the node.js questions. ",
+      "start": 308267,
+      "end": 311028
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "okay all right. ",
+      "start": 311269,
+      "end": 312329
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "um i would like to ask you okay for example uh node.js. ",
+      "start": 313330,
+      "end": 320255
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "for first. ",
+      "start": 320675,
+      "end": 321035
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "first of all node.js is single thread or multi application. ",
+      "start": 321075,
+      "end": 323637
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "it's a single javascript is a single traded language, however, node.js allows javascript to be able to run. ",
+      "start": 325717,
+      "end": 333505
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "However, node.js kind of augments the fact that javascript is single traded by providing an event. ",
+      "start": 334627,
+      "end": 340353
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "so while javascript is single traded, you can run. ",
+      "start": 340553,
+      "end": 344537
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "You can perform concurrent operations using node.js. ",
+      "start": 344998,
+      "end": 347501
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "node.js and the event loop right and yes node.js and the event loop. ",
+      "start": 349466,
+      "end": 354412
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "so yeah okay great that's a good answer. ",
+      "start": 354552,
+      "end": 357703
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "well what else? ",
+      "start": 358083,
+      "end": 359103
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "uh if as you mentioned node.js is a single thread okay application uh it goes to one single core and stay there forever right until we reset it. ",
+      "start": 359863,
+      "end": 371106
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "my question for you is how can we make node.js or multi-threading or simulate multi-threading with node.js? ",
+      "start": 371787,
+      "end": 379649
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Yeah, so Node.js comes with a tool called fork. ",
+      "start": 380663,
+      "end": 389185
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So generally, a fork is used to spawn shared processes. ",
+      "start": 389625,
+      "end": 392886
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "In Node.js, it is used to create a new instance of the VEAD engine to run multiple workers to execute code. ",
+      "start": 393787,
+      "end": 400188
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So by creating a fork, Node.js can spread these operations via the multiple workers on the various cores of the host machine. ",
+      "start": 400648,
+      "end": 408931
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "essentially yeah kind of yeah. ",
+      "start": 411363,
+      "end": 415884
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "yeah no no that that's that's okay. ",
+      "start": 416325,
+      "end": 418585
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "yeah i kind of that. ",
+      "start": 418845,
+      "end": 419966
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "and uh um have you ever heard about v-eight engine? ",
+      "start": 420626,
+      "end": 426188
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "yes i have. ",
+      "start": 427548,
+      "end": 428108
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "it's one of the javascript engines provided by google nice. ",
+      "start": 428488,
+      "end": 433210
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "and why node.js uses v-eight? ",
+      "start": 433430,
+      "end": 435070
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "so um essentially when via engine is an option is an open source engine within in C++ and developed by Google. ",
+      "start": 436191,
+      "end": 446666
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "it runs in Google chrome, unlike other engines, it is. ",
+      "start": 447186,
+      "end": 450528
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "also utilized for Pop! ",
+      "start": 451641,
+      "end": 453502
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "One Node.js runtime. ",
+      "start": 453582,
+      "end": 454662
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So VH was initially intended to improve the speed of JavaScript execution within browsers. ",
+      "start": 454962,
+      "end": 460043
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Instead of employing an interpreter, VH converts JavaScript code into more efficient machine code to increase performance. ",
+      "start": 460744,
+      "end": 467786
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "It turns JavaScript code into machine code during execution by utilizing just-in-time compiler. ",
+      "start": 468446,
+      "end": 474428
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So, um, in order to run JavaScript on the server side, uh, with, um, on the server side, speed is essential. ",
+      "start": 475990,
+      "end": 484760
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "and with VH, JavaScript, uh, with VS just in time compilation, JavaScript can be run faster on the server side. ",
+      "start": 485020,
+      "end": 492509
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "And that's why Node.js uses VH. ",
+      "start": 492589,
+      "end": 494351
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Cool. ",
+      "start": 496393,
+      "end": 496554
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Thank you for this answer. ",
+      "start": 497639,
+      "end": 498800
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Let's see. ",
+      "start": 500121,
+      "end": 500662
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Let's see. ",
+      "start": 502603,
+      "end": 503264
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "So you mentioned the event loop Node.js, okay? ",
+      "start": 503364,
+      "end": 507627
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Could you explain to me what is the event loop? ",
+      "start": 507707,
+      "end": 511751
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Yes. ",
+      "start": 512712,
+      "end": 512932
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So the event loop is what allows Node.js to perform non-blocking IEO operations. ",
+      "start": 513251,
+      "end": 519457
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So despite the fact that JavaScript is single-threaded, Usually, by affording operations to the system kernel whenever possible. ",
+      "start": 520337,
+      "end": 529547
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Since most kernels are multi-threaded, they can have multiple operations executed in the background. ",
+      "start": 531008,
+      "end": 538631
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "When one of these operations completes, the kernel tells Node.js so that the appropriate callback can be added to the POQ. ",
+      "start": 539252,
+      "end": 545915
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "essentially the event loop is the mechanism to which no js uses a single traded language of javascript to still perform multiple operations. ",
+      "start": 546975,
+      "end": 555562
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "that's it and i mean the event would. ",
+      "start": 556503,
+      "end": 558645
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "there are different phases. ",
+      "start": 558685,
+      "end": 559846
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "i could go on and elaborate about it. ",
+      "start": 560006,
+      "end": 561687
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "we have yeah i'm good i'm good i'm good with this. ",
+      "start": 561908,
+      "end": 565310
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "yeah uh this kind of question is just to know. ",
+      "start": 565350,
+      "end": 568153
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "uh if you are familiarized with the engine with Node.js, you know, yeah. ",
+      "start": 568553,
+      "end": 575277
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Okay, this one is a classic question, okay, classic Node.js question that you'll be asking a lot during the interview like this. ",
+      "start": 575898,
+      "end": 584343
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "My question is, what do you understand about callbacks? ",
+      "start": 585904,
+      "end": 588925
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "All right, so callbacks are a way of, in Node.js, a way of performing an operation asynchronous with the callbacks essential functions that are passed into um another function or any other asynchronous process to be called at the later time and that time is usually indeterminate. ",
+      "start": 591407,
+      "end": 610755
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "um but um. ",
+      "start": 611295,
+      "end": 612996
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "so the callback those functions are registered with event loop and at the later time they will be called nice and have you ever heard about callback health? ",
+      "start": 613056,
+      "end": 623440
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Yeah, callback health is a problem that arises usually when developers try to implement asynchronous processes one after the other. ",
+      "start": 624232,
+      "end": 632361
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So there are lots of ways to solve callback health. ",
+      "start": 633162,
+      "end": 637988
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "More recently, you could use async-await, but the general strategy is modularization. ",
+      "start": 638829,
+      "end": 645036
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "you can break up callbacks into independent functions and another strategy is to use a control flow library that is like async. ",
+      "start": 645536,
+      "end": 653723
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "or however more recently you can use the new escs feature async await. ",
+      "start": 654123,
+      "end": 659367
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "another way of reducing or eliminating callback here is to use a javascript generators with promises nice generators nice all right great answer all right. ",
+      "start": 659927,
+      "end": 671996
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "so um let's see uh what kind of framework uh have been used with node.js? ",
+      "start": 672016,
+      "end": 679503
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "yeah i'm familiar with a couple of frameworks with node.js um i've used. ",
+      "start": 680784,
+      "end": 684828
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "i've worked with express i've worked with core i've also worked with nest.js. ",
+      "start": 684848,
+      "end": 690713
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Those are essentially the ones that I've worked very much with and quick proficiency in. ",
+      "start": 692482,
+      "end": 698425
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Nice. ",
+      "start": 699425,
+      "end": 699685
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Okay, great. ",
+      "start": 700105,
+      "end": 701046
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "That's great. ",
+      "start": 701226,
+      "end": 701786
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "What's the difference between ExpressJS and NestJS, for example? ",
+      "start": 703007,
+      "end": 708329
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So XpressJS is a framework on Node.js, just like NestJS. ",
+      "start": 709517,
+      "end": 715405
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "However, XpressJS is more world-level. ",
+      "start": 715705,
+      "end": 720051
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "It gives you more exposure to the internal workings of James Forrest, Norcal PTACC, Norcal PTACC, Not just have no just call library and also, it is not it's on opinionated so. ",
+      "start": 720632,
+      "end": 731868
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "James Forrest, Norcal PTACC, Norcal PTACC, Whereas messages is the higher level framework, which can also be used with messages or classify messages is more opinionated and introduces advanced concept like dependency injection and. ",
+      "start": 731888,
+      "end": 747135
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "has some certain ideas or opinion on how to structure your code. ",
+      "start": 747555,
+      "end": 752016
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "NestJS should be prioritized or should be used in where you want to build a very large application and you want to achieve structure and the code that would be maintainable over time. ",
+      "start": 753136,
+      "end": 763058
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "However, if you want something quick and small, I would go with ExpressJS. ",
+      "start": 763198,
+      "end": 767739
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Okay, great. ",
+      "start": 769639,
+      "end": 770480
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "You mentioned dependency injection. ",
+      "start": 771640,
+      "end": 774380
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Okay, what's dependency injection? ",
+      "start": 774640,
+      "end": 776901
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So dependency injection is a mechanism that allows the framework to be able to identify certain tokens or services that have been pre-configured in the code and inject it into other services in runtime. ",
+      "start": 777816,
+      "end": 795332
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So instead of the writing manual code to instantiate objects and pass it to various functions, the developer can more or less write the services and the functions, and then the dependency injection engine would take appropriate classes and instantiate, create an instance of it at the time when it needs it. ",
+      "start": 795772,
+      "end": 815991
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "And so in that sense, it makes the code a bit more declarative and instead of imperative. ",
+      "start": 816992,
+      "end": 823759
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So it's also a medium for for allowing you to write more decoupled codes. ",
+      "start": 824580,
+      "end": 830746
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Nice. ",
+      "start": 831867,
+      "end": 832127
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Okay. ",
+      "start": 832567,
+      "end": 832927
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "All right. ",
+      "start": 833468,
+      "end": 833728
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "And let's see. ",
+      "start": 833988,
+      "end": 834889
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "What do you understand about streaming in Node.js? ",
+      "start": 835489,
+      "end": 838912
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Streaming. ",
+      "start": 840433,
+      "end": 840874
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So streaming is a way of managing data or passing or working with data that allows data to be processed without being read completely into the memory. ",
+      "start": 841214,
+      "end": 855946
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "For example, if you have a large collection of data, it might not be pragmatic to read all the data into memory before processing it. ",
+      "start": 856426,
+      "end": 865753
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "But when you employ streaming, you can read the data chunk by chunk and process small chunks at a time. ",
+      "start": 866174,
+      "end": 872479
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "In that way, you can circumvent the memory constraint of the system. ",
+      "start": 872879,
+      "end": 877322
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So, Node.js, many of the Node.js core libraries like the event emitters are built around streams. ",
+      "start": 881297,
+      "end": 887863
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Okay, great. ",
+      "start": 889064,
+      "end": 889764
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "I'm glad that you mentioned event emitters. ",
+      "start": 890865,
+      "end": 892727
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "So, what are event emitters? ",
+      "start": 892907,
+      "end": 895349
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "What do you understand about event emitters? ",
+      "start": 895429,
+      "end": 897210
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So, event emitters are a way of writing... Okay, in the situations we have used event emitters, event emitters are used to write more decoupled codes. ",
+      "start": 898091,
+      "end": 909601
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So essentially, the way it works, there is an event is dispatched, and then there's a listener function that is registered with that event. ",
+      "start": 910214,
+      "end": 921170
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So whenever an action happens and an event is dispatched, all the waste in us which are just functions registered to the event are executed. ",
+      "start": 921811,
+      "end": 932319
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So from a programmer's perspective, it can allow you to write code that is decoupled. ",
+      "start": 932799,
+      "end": 937560
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Let's say you want to communicate across services without having to import all the implementation detail of one service into another file, you can use event emitters to communicate synchronously. ",
+      "start": 937801,
+      "end": 948864
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "And what's the difference between event emitters and publisher and subscriber design pattern? ",
+      "start": 951300,
+      "end": 959327
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So event emitters, there are more similarities than there are differences. ",
+      "start": 961889,
+      "end": 968754
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "However, what I would say is for publisher and subscriber design pattern, there needs to be an established topic in which all publishers will publish to, then the subscribers will be registered on the same topic and listening for messages coming from that topic. ",
+      "start": 969215,
+      "end": 991535
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "That's my understanding. ",
+      "start": 992136,
+      "end": 993478
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "But yeah and then also the use cases kind of present some differences. ",
+      "start": 994076,
+      "end": 999881
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "so but we just describe a pattern. ",
+      "start": 1000321,
+      "end": 1003024
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "most times can be used across. ",
+      "start": 1003264,
+      "end": 1005126
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Various services across the across http protocol, whereby we have this script publisher and one service, and this is quite by another service, however, event emitters. ",
+      "start": 1006467,
+      "end": 1017917
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "their scope of communications is limited within the same local service. ",
+      "start": 1018497,
+      "end": 1022720
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "so maybe you have one service in one file and you want to publish an event to another service another file. ",
+      "start": 1023040,
+      "end": 1028282
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "so that's my understanding makes sense. ",
+      "start": 1029083,
+      "end": 1032025
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "yeah makes sense all right. ",
+      "start": 1032444,
+      "end": 1034126
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "so uh what kind of database are you familiar with? ",
+      "start": 1034205,
+      "end": 1037988
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "node.js? ",
+      "start": 1038068,
+      "end": 1038508
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "i mean not with node.js at all. ",
+      "start": 1038888,
+      "end": 1040990
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "uh what kind of days are you familiar with? ",
+      "start": 1041010,
+      "end": 1043111
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So I've worked with PostgreSQL and I've worked with MongoDB. ",
+      "start": 1043871,
+      "end": 1049134
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "However, I would say I'm more familiar with MongoDB than PostgreSQL with Node.js. ",
+      "start": 1049554,
+      "end": 1055358
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So while working with PostgreSQL with Node.js, most of the time I've used the OLMs, object relational mappers. ",
+      "start": 1056839,
+      "end": 1064083
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "However, and also while working with Mongo, I used the Mongo's ODM object data mapper. ",
+      "start": 1064944,
+      "end": 1071828
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So in terms of proficiency, MongoDB is where I'm more proficient at. ",
+      "start": 1072614,
+      "end": 1078121
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "In your understanding, what's the difference between MongoDB and PostgreSQL? ",
+      "start": 1079543,
+      "end": 1084410
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "All right, a major difference between mongodb and postgres is the fact that mongodb is, or rather postgres is a relational database, meaning that it stores data in a structured form in tables that have rows and columns. ",
+      "start": 1085606,
+      "end": 1103476
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "However, mongodb is a non-relational database, oftentimes it is also called a new SQL database. ",
+      "start": 1104136,
+      "end": 1111640
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "There's some of the differences also between the two come from the fact that there's a standard query language for query Postgres. ",
+      "start": 1114570,
+      "end": 1125100
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "That's why Postgres is also for an SQL database. ",
+      "start": 1125400,
+      "end": 1129684
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "And whereas MongoDB allows stores this information in key data and I mean, key value pairs. ",
+      "start": 1130285,
+      "end": 1137672
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So in summary, Postgres is a relational database that stores its information in tables in a more structured form. ",
+      "start": 1138675,
+      "end": 1146645
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "MongoDB stores its information in a key-value pair, which allows it doesn't have much of structure, but it's more flexible. ",
+      "start": 1148427,
+      "end": 1155056
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "I'm going to ask you a few questions related to SQL database and non-SQL database. ",
+      "start": 1156348,
+      "end": 1162392
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "in the end, okay? ",
+      "start": 1162452,
+      "end": 1163493
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "But for now, I'd like to ask you if you, do you have any experience with WebSockets? ",
+      "start": 1163693,
+      "end": 1169136
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Yes, I have some experience with WebSockets. ",
+      "start": 1169957,
+      "end": 1172939
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Maybe not in a full-scale experience, but I have used some projects with WebSockets, so I can attempt questions in WebSocket. ",
+      "start": 1173439,
+      "end": 1181104
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Nice what's the difference between one application that use web sockets to communicate with the back end and one application that use restful api's to do the same. ",
+      "start": 1181997,
+      "end": 1193785
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So generally web sockets are used when you want to and. ",
+      "start": 1194846,
+      "end": 1199109
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "build real time features on a server. ",
+      "start": 1199744,
+      "end": 1203567
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So usually RESTful API works with a request response cycle, meaning that for a server to send information to the client, the client has to first of all, make a request. ",
+      "start": 1204148,
+      "end": 1216438
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "But with WebSocket, you kind of introduce a dual method of communication, meaning the client can make a request to the server, and the server, at any time it has data, can push data to the client without the client having to initiate the request. ",
+      "start": 1217222,
+      "end": 1234314
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So with that ability, a real-time application can be built, and WebSocket enables this ability, provides this ability to servers. ",
+      "start": 1234694,
+      "end": 1242800
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Great. ",
+      "start": 1244707,
+      "end": 1244967
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "And do you have experience with GraphQL? ",
+      "start": 1245869,
+      "end": 1248172
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Yes, I've had some experience with GraphQL. ",
+      "start": 1249634,
+      "end": 1251757
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Yes. ",
+      "start": 1252578,
+      "end": 1252778
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Okay. ",
+      "start": 1254180,
+      "end": 1254481
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "How would you describe GraphQL? ",
+      "start": 1254741,
+      "end": 1256523
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "What's GraphQL? ",
+      "start": 1256684,
+      "end": 1257425
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So GraphQL can be, I can describe or exemplify GraphQL by making some comparison with ETH and REST. ",
+      "start": 1258351,
+      "end": 1266854
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So essentially GraphQL was introduced to augment some of the deficiencies of REST framework. ",
+      "start": 1267114,
+      "end": 1273256
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So usually the RESTful framework endpoints are defined ahead of time, payloads that endpoints return are defined ahead of time and the response the shape of the response from the rest to API defined ahead of time with minimal flexibility. ",
+      "start": 1273697,
+      "end": 1290724
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "but with GraphQL you're provided an interface in which a client can query the server with very varied payload and can get varied response. ",
+      "start": 1291205,
+      "end": 1303970
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "so in a situation where the client wants to just get enough data that it needs it will not be over with it with too much data. ",
+      "start": 1304130,
+      "end": 1311573
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "and when a client wants to request for maybe data involving various resources with a single endpoint and with a single query the server the client can make that request. ",
+      "start": 1311953,
+      "end": 1322958
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "so essentially GraphQL makes up for RESTful API in terms of introducing flexibility of queries and also decreasing the amount of information that is transferred by the network by allowing the client to specify exactly what he needs and what he doesn't need. ",
+      "start": 1323058,
+      "end": 1341418
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "essentially great great all right. ",
+      "start": 1343055,
+      "end": 1345776
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "so um we gotta come to the end. ",
+      "start": 1345856,
+      "end": 1348417
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "okay before i ask you a few more questions i just like to give uh uh heads up for our fellow developers that are watching this video. ",
+      "start": 1348677,
+      "end": 1356840
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "okay so if you are looking for jobs okay uh job opportunities i recommend you to go to the website student.com. ",
+      "start": 1357140,
+      "end": 1364002
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "slash jobs. ",
+      "start": 1364042,
+      "end": 1364602
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "okay you can find jobs by your tech stack And once you find them, so all you need to do is just create your account if you don't have one. ",
+      "start": 1364982,
+      "end": 1372626
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "OK, and pass through the vetting process once you pass. ",
+      "start": 1373026,
+      "end": 1376968
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "So you find a job as a victor as I did. ",
+      "start": 1377348,
+      "end": 1381030
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "OK. ",
+      "start": 1381050,
+      "end": 1381730
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "And then you start working one hundred percent remotely from the country that you want. ",
+      "start": 1382170,
+      "end": 1387493
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "OK. ",
+      "start": 1387733,
+      "end": 1387993
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Any place in the world. ",
+      "start": 1388133,
+      "end": 1389494
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "okay let's go let's just come back for victor. ",
+      "start": 1390234,
+      "end": 1392795
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "but before that if you enjoy this content just consider give us the big fake thumbs up and comment down below. ",
+      "start": 1392975,
+      "end": 1398636
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "uh what is your tech stack? ",
+      "start": 1398656,
+      "end": 1401117
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "okay and what kind of job are you looking for? ",
+      "start": 1401277,
+      "end": 1403657
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "okay so we're coming to the end. ",
+      "start": 1404297,
+      "end": 1406818
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "okay i just have a few more questions for you. ",
+      "start": 1407058,
+      "end": 1409159
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "um so uh how do you keep yourself up to date with node.js? ",
+      "start": 1410679,
+      "end": 1418161
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "All right. ",
+      "start": 1419687,
+      "end": 1419967
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So first of all, I have a Medium account and I have daily subscriptions. ",
+      "start": 1420367,
+      "end": 1428610
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So with Medium, you can subscribe to some channels to give you some daily doses of articles written in your favourite stack. ",
+      "start": 1428790,
+      "end": 1437172
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "For me, I subscribe to Node.js updates. ",
+      "start": 1437372,
+      "end": 1441273
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So every morning I check my email for the daily dose of Node.js, I read some articles. ",
+      "start": 1441693,
+      "end": 1447075
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "just to find out what's more recent. ",
+      "start": 1447915,
+      "end": 1450096
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Then sometimes I occasionally go to the NPM website and just browse for packages to see what is currently being developed by the various, by the community. ",
+      "start": 1450576,
+      "end": 1461539
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Then oftentimes I also take some courses, some professional courses to improve my skills in Node.js. ",
+      "start": 1462120,
+      "end": 1469002
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "And then finally, this might sound obvious, but I want to emphasize it. ",
+      "start": 1469822,
+      "end": 1474864
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Just keep practicing, and especially targeted practice. ",
+      "start": 1475064,
+      "end": 1478945
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Whenever I realize that I have some deficiencies or some struggles in a particular area of Node.js, I go to the Node.js documentation. ",
+      "start": 1479345,
+      "end": 1488728
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "I try to implement projects that would task my knowledge on such concepts. ",
+      "start": 1489148,
+      "end": 1496830
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So over time, I get better at Node.js. ",
+      "start": 1497190,
+      "end": 1499191
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "And then there's always room for improvement in JavaScript, because even though Node.js is not exactly JavaScript, even though Node.js is more than JavaScript, getting stronger or better in JavaScript would definitely improve your skills in Node.js. ",
+      "start": 1499751,
+      "end": 1519966
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "So those are the few tips that I use to improve my Node.js and JavaScript in general. ",
+      "start": 1520726,
+      "end": 1526210
+    },
+    {
+      "id": "0",
+      "speaker": "A",
+      "text": "Thank you. ",
+      "start": 1526830,
+      "end": 1527171
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Great, Victor. ",
+      "start": 1528117,
+      "end": 1528758
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Thank you. ",
+      "start": 1528878,
+      "end": 1529398
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "It was really nice to speak with you today. ",
+      "start": 1530239,
+      "end": 1532561
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "And to everybody else, thank you for attending this mock interview with us again, and hope you enjoyed this video as much as I did. ",
+      "start": 1533362,
+      "end": 1541329
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "And we'll be back very soon with more episodes like this for any tech stack. ",
+      "start": 1542089,
+      "end": 1547714
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "Please comment below what tech stack would like to cover that we cover. ",
+      "start": 1547774,
+      "end": 1552298
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "We can create mock interview for that. ",
+      "start": 1552338,
+      "end": 1554060
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "and then you can prepare yourself better for this kind of interview. ",
+      "start": 1554580,
+      "end": 1558662
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "okay uh please drop your suggestions comments hit the like button subscribe to touring's uh. ",
+      "start": 1558682,
+      "end": 1566126
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "youtube channel and don't forget to. ",
+      "start": 1566166,
+      "end": 1568847
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "uh don't forget to to give us the big fat thumbs up for this video if you enjoyed this content. ",
+      "start": 1569108,
+      "end": 1573950
+    },
+    {
+      "id": "1",
+      "speaker": "B",
+      "text": "okay take care stay safe wash your hands and happy coding. ",
+      "start": 1573970,
+      "end": 1577692
+    }
+  ]
+}

@@ -1,6 +1,25 @@
 # Automatic Speech Recognition
 
-## Dependencies
+This project aims to build a system that can automatically transcribe speech to text. The system will be able to transcribe speech from various sources such as YouTube videos, audio files, etc. The system will be built using the `NeMo` toolkit, which is a toolkit for building state-of-the-art conversational AI models.
+
+Supported functions:
+- Collect data from YouTube
+- Process data
+- Automatic Speech Recognition (ASR)
+- Speaker Diarization
+- Pronunciation/Grammar Assessment
+
+## Getting started
+I recommend to use anaconda to create environment
+```bash
+    conda create -n asr python=3.10
+    conda activate asr
+```
+Clone the repository
+```bash
+    git clone https://github.com/Foxxy-HCMUS/automatic-speech-recognition.git
+```
+
 ```bash
     sudo apt-get install ffmpeg
 
@@ -10,7 +29,10 @@
     pip install --no-deps git+https://github.com/facebookresearch/demucs#egg=demucs
     pip install git+https://github.com/oliverguhr/deepmultilingualpunctuation.git
     pip install ctranslate2==3.24.0
+```
 
+Install requirements
+```bash
     # Install in editable mode to avoid constant re-installation
     # Also include all optional dependencies
     python -m pip install -e .[all]
@@ -18,11 +40,14 @@
     # Install pre-commit hooks to automatically check/format code on commits
     pre-commit install
 ```
-
+In case `pytorch` cannot compiled with cuda, please run the following command
+```bash
+    pip install torch==1.13.1+cu116 torchaudio==0.13.1 torchvision==0.14.1+cu116 --extra-index-url=https://download.pytorch.org/whl/cu116
+```
 
 
 ## Guidelines
-Youtube API is free, just have quota limit: https://github.com/ThioJoe/YT-Spammer-Purge/wiki/Understanding-YouTube-API-Quota-Limits
+<!-- Youtube API is free, just have quota limit: https://github.com/ThioJoe/YT-Spammer-Purge/wiki/Understanding-YouTube-API-Quota-Limits -->
 
 ### Collect data
 ```bash
