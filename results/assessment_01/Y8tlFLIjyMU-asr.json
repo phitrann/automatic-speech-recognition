@@ -38,7 +38,7 @@
     {
       "text": " Thank you. Nice. All right. So you can see that you have worked hard to be here today, right?",
       "start": 124.445,
-      "end": 130.674,
+      "end": 130.657,
       "id": 5,
       "speaker": "A"
     },
@@ -50,21 +50,21 @@
       "speaker": "A"
     },
     {
-      "text": " Wow, yeah, that's a tricky question for me, but I would do well to answer it. So I started writing Python and kind of fell in love with Python. However, over the years, I've used more production applications using JavaScript and . So if I were building some fun projects just for myself, I would maybe pick Python. But if I wanted to come up, hit the ground fast, and build something that works, that would be deployed in production,",
+      "text": " Wow, yeah, that's a tricky question for me, but I would do well to answer it. So I started writing Python and kind of fell in love with Python. However, over the years, I've used more production applications using JavaScript and . So if I were building some fun projects just for myself, I would maybe pick Python. But if I wanted to come up, hit the ground fast, and build something that works, that would be deployed in production.",
       "start": 156.493,
       "end": 184.428,
       "id": 7,
       "speaker": "A"
     },
     {
-      "text": " I would always reach out for NewJS, React, and JavaScript essentially. So in a way, I would say JavaScript. That's it. That's a smart answer because this position is for JavaScript, right? If you say Python, okay, so you're not going.",
+      "text": " I would always reach out for NewJS, React and JavaScript essentially. So in a way I would say JavaScript. That's it. That's a smart answer because this position is for JavaScript, right? If you say Python, okay, so you're not going.",
       "start": 184.428,
-      "end": 199.053,
+      "end": 199.07,
       "id": 8,
       "speaker": "A"
     },
     {
-      "text": " Okay, I'm kidding. I'm kidding. All right. So, all right. So could you please tell me, let's see, could you please tell me or describe a few projects or, I mean, the best project that you have been, that you work with JavaScript, for example?",
+      "text": " Okay. I'm kidding. I'm kidding. All right. So, all right. So could you please tell me, um, let's see, could you please tell me, uh, or describe, uh, a few projects or, I mean, the, the best project that you have been, that you work with JavaScript, for example.",
       "start": 199.326,
       "end": 217.278,
       "id": 9,
@@ -80,7 +80,7 @@
     {
       "text": " to perform transaction, money has to move into the destination's bank account at specific time and in specific percentages. So I was tasked to build an API that would be controlled by a dashboard that I also built that would enable the users customize how much percentage of money would go from the source bank account to various",
       "start": 243.848,
-      "end": 269.104,
+      "end": 269.087,
       "id": 11,
       "speaker": "A"
     },
@@ -99,42 +99,42 @@
       "speaker": "A"
     },
     {
-      "text": " it's a single javascript is a single traded language, however, node.js allows javascript to be able to run. However, node.js kind of augments the fact that javascript is single traded by providing an event so while javascript is single traded, you can run. You can perform concurrent operations using node.js.",
+      "text": " it's a single javascript is a single traded language, however, node.js allows javascript to be able to run. However, node.js kind of augments the fact that javascript is single traded by providing an event so while javascript is single traded, you can run you can perform concurrent operations using node.js.",
       "start": 325.657,
       "end": 347.841,
       "id": 14,
       "speaker": "A"
     },
     {
-      "text": " node.js and the event loop right and yes node.js and the event loop so yeah",
+      "text": " node.js and the event loop right and yes node.js and the event loop so yeah okay great that's a good answer well what else uh if as you mentioned node.js is a single thread okay application uh it goes to one single core and stay there forever right until we reset it",
       "start": 349.326,
-      "end": 355.794,
+      "end": 371.681,
       "id": 15,
       "speaker": "A"
     },
     {
-      "text": " okay great that's a good answer well what else uh if as you mentioned node.js is a single thread okay application uh it goes to one single core and stay there forever right until we reset it my question for you is how can we make node.js or multi-threading or simulate multi-threading with node.js",
-      "start": 355.862,
-      "end": 379.889,
+      "text": " My question for you is how can we make Node.js or multi-threading or simulate multi-threading with Node.js? Yes, so Node.js comes with a tool or",
+      "start": 371.681,
+      "end": 386.544,
       "id": 16,
       "speaker": "A"
     },
     {
-      "text": " Yeah, so Node.js comes with a tool called fork. So generally, a fork is used to spawn shared processes. In Node.js, it is used to create a new instance of the VEAD engine to run multiple workers to execute code. So by creating a fork, Node.js can spread these operations via the multiple workers on the various cores of the host machine.",
-      "start": 380.623,
-      "end": 410.111,
+      "text": " called fork. So which forks? So generally, a fork is used to spawn shared processes. In Node.js, it is used to create a new instance of the VEAD engine to run multiple workers to execute code. So by creating a fork, Node.js can spread these operations via the multiple workers of the various cores of the host machine, essentially.",
+      "start": 387.295,
+      "end": 411.954,
       "id": 17,
       "speaker": "A"
     },
     {
-      "text": " essentially yeah kind of yeah yeah no no that that's that's okay yeah i kind of that and uh um have you ever heard about v-eight engine yes i have it's one of the javascript engines provided by google nice and why node.js uses v-eight so um",
-      "start": 411.203,
-      "end": 436.971,
+      "text": " Yeah, kind of, yeah. No, that's okay. Yeah, kind of that. And have you ever heard about V-Eight Engine? Yes, I have. It's one of the JavaScript engines provided by Google. Nice. And why Node.js uses V-Eight?",
+      "start": 414.087,
+      "end": 436.954,
       "id": 18,
       "speaker": "A"
     },
     {
-      "text": " essentially when via engine is an option is an open source engine within in C++ and developed by Google it runs in Google chrome, unlike other engines, it is.",
+      "text": " essentially when via engine is an option is an open source engine written in C++ and developed by Google, it runs in Google Chrome, unlike other engines, it is.",
       "start": 437.5,
       "end": 450.828,
       "id": 19,
@@ -143,14 +143,14 @@
     {
       "text": " also utilized for Pop! One Node.js runtime. So VH was initially intended to improve the speed of JavaScript execution within browsers. Instead of employing an interpreter, VH converts JavaScript code into more efficient machine code to increase performance. It turns JavaScript code into machine code during execution by utilizing just-in-time compiler.",
       "start": 451.561,
-      "end": 475.708,
+      "end": 475.674,
       "id": 20,
       "speaker": "A"
     },
     {
-      "text": " So, um, in order to run JavaScript on the server side, uh, with, um, on the server side, speed is essential and with VH, JavaScript, uh, with VS just in time compilation, JavaScript can be run faster on the server side. And that's why Node.js uses VH. Cool.",
+      "text": " So, um, in order to run JavaScript on the server side, uh, with, um, on the server side, speed is essential. And with VH, JavaScript, uh, with VS just in time compilation, JavaScript can be run faster on the server side. And that's why Node.js uses VH. Cool.",
       "start": 475.93,
-      "end": 496.834,
+      "end": 496.817,
       "id": 21,
       "speaker": "A"
     },
@@ -169,14 +169,14 @@
       "speaker": "A"
     },
     {
-      "text": " essentially the event loop is the mechanism to which no js uses a single traded language of javascript to still perform multiple operations that's it and i mean the event would there are different phases i could go on and elaborate about it we have yeah i'm good i'm good i'm good with this yeah uh this kind of question is just to know uh if you are familiarized with",
+      "text": " Essentially, the event loop is the mechanism through which Node.js uses a single traded language of JavaScript to still perform multiple operations. That's it. And in the event loop, there are different phases. I could go on and elaborate about it. Yeah, I'm good. I'm good. I'm good with this. Yeah. This kind of question is just to know if you are familiarized with",
       "start": 546.715,
       "end": 571.015,
       "id": 24,
       "speaker": "A"
     },
     {
-      "text": " the engine with Node.js, you know, yeah. Okay, this one is a classic question, okay, classic Node.js question that you'll be asking a lot during the interview like this. My question is, what do you understand about callbacks? All right, so callbacks are a way of, in Node.js, a way of performing an operation asynchronous with the callbacks essential functions that are passed into",
+      "text": " The engine with node.js, you know? Yeah. Okay. This one is a classic question. Okay. Classic node.js question that you'll be asking a lot during the interview like this. My question is, what do you understand about callbacks? All right. So callbacks are a way of, in node.js, a way of performing an operation asynchronously. So callbacks are essentially functions that are passed into",
       "start": 571.715,
       "end": 601.613,
       "id": 25,
@@ -184,7 +184,7 @@
     },
     {
       "text": " um another function or any other asynchronous process to be called at the later time and that time is usually indeterminate um but um so the callback those functions are registered with event loop and at the later time they will be called nice and have you ever heard about callback health",
-      "start": 601.971,
+      "start": 601.988,
       "end": 623.66,
       "id": 26,
       "speaker": "A"
@@ -197,7 +197,7 @@
       "speaker": "A"
     },
     {
-      "text": " you can break up callbacks into independent functions and another strategy is to use a control flow library that is like async or however more recently you can use the new escs feature async await another way of reducing or eliminating callback here is to use a javascript generators with promises",
+      "text": " you can break up callbacks into independent functions and another strategy is to use a control library that is like async or however more recently you can use the new escs feature async await another way of reducing or eliminating callback here is to use a javascript generators with promises",
       "start": 645.316,
       "end": 667.073,
       "id": 28,
@@ -225,7 +225,7 @@
       "speaker": "A"
     },
     {
-      "text": " James Forrest, Norcal PTACC, Norcal PTACC, Not just have no just call library and also, it is not it's on opinionated so. James Forrest, Norcal PTACC, Norcal PTACC, Whereas messages is the higher level framework, which can also be used with messages or classify messages is more opinionated and introduces advanced concept like dependency injection and.",
+      "text": " James Forrest, Norcal PTACC, Norcal PTACC, Not just have no just call library and also, it is not it's on opinionated so. James Forrest, Norcal PTACC, Norcal PTACC, Whereas messages is the higher level framework, which can also be used with next year's or pacify next year's is more opinionated and introduces advanced concept like dependency injection and.",
       "start": 725.845,
       "end": 747.295,
       "id": 32,
@@ -241,13 +241,13 @@
     {
       "text": " So dependency injection is a mechanism that allows the framework to be able to identify certain tokens or services that have been pre-configured in the code and inject it into other services in runtime. So instead of the writing manual code to instantiate objects and pass it to various functions,",
       "start": 777.756,
-      "end": 802.278,
+      "end": 802.329,
       "id": 34,
       "speaker": "A"
     },
     {
-      "text": " the developer can more or less write the services and the functions, and then the dependency injection engine would take appropriate classes and instantiate, create an instance of it at the time when it needs it. And so in that sense, it makes the code a bit more declarative and instead of imperative. So it's also a medium for",
-      "start": 802.278,
+      "text": " the developer can more or less write the services and the functions and then the dependency injection engine would take appropriate classes and instantiate with an instance of it at the time when it needs it and so in that sense it makes the code a bit more declarative and instead of imperative so it's also a medium for",
+      "start": 802.329,
       "end": 827.142,
       "id": 35,
       "speaker": "A"
@@ -281,7 +281,7 @@
       "speaker": "A"
     },
     {
-      "text": " all the waste in us which are just functions registered to the event are executed. So from a programmer's perspective, it can allow you to write code that is decoupled. Let's say you want to communicate across services without having to import all the implementation detail of one service into another file, you can use event emitters to communicate synchronously.",
+      "text": " all the waste in us, which are just functions registered to the event are executed. So from a programmer's perspective, it can allow you to write code that is decoupled. Let's say you want to communicate across services without having to import all the implementation detail of one service into another file, you can use event emitters to communicate synchronously.",
       "start": 926.237,
       "end": 949.104,
       "id": 40,
@@ -297,7 +297,7 @@
     {
       "text": " in which all publishers will publish to, then the subscribers will be registered on the same topic and listening for messages coming from that topic. That's my understanding.",
       "start": 978.575,
-      "end": 993.558,
+      "end": 993.575,
       "id": 42,
       "speaker": "A"
     },
@@ -318,7 +318,7 @@
     {
       "text": " So I've worked with PostgreSQL and I've worked with MongoDB. However, I would say I'm more familiar with MongoDB than PostgreSQL with Node.js. So while working with PostgreSQL with Node.js, most of the time I've used the OLMs, object relational mappers. However, and also while working with Mongo, I used the Mongo's ODM object data mapper.",
       "start": 1043.831,
-      "end": 1072.108,
+      "end": 1072.09,
       "id": 45,
       "speaker": "A"
     },
@@ -337,15 +337,15 @@
       "speaker": "A"
     },
     {
-      "text": " There's some of the differences also between the two come from the fact that there's a standard query language for query Postgres. That's why Postgres is also for an SQL database. And whereas MongoDB allows stores this information in key data and I mean, key value pairs.",
+      "text": " There's some of the differences also between the two come from the fact that there's a standard query language for querying Postgres. That's why Postgres is also for an SQL database. And whereas MongoDB allows stores its information in key data and I mean key value pairs.",
       "start": 1114.07,
-      "end": 1138.012,
+      "end": 1137.995,
       "id": 48,
       "speaker": "A"
     },
     {
       "text": " So in summary, Postgres is a relational database that stores its information in tables in a more structured form. MongoDB stores its information in a key-value pair, which allows it doesn't have much of structure, but it's more flexible.",
-      "start": 1138.575,
+      "start": 1138.558,
       "end": 1155.316,
       "id": 49,
       "speaker": "A"
@@ -353,14 +353,14 @@
     {
       "text": " I'm going to ask you a few questions related to SQL database and non-SQL database in the end, okay? But for now, I'd like to ask you if you, do you have any experience with WebSockets? Yes, I have some experience with WebSockets. Maybe not in a full-scale experience, but I have used some projects with WebSockets, so I can attempt questions in WebSocket.",
       "start": 1156.288,
-      "end": 1181.544,
+      "end": 1181.561,
       "id": 50,
       "speaker": "A"
     },
     {
-      "text": " Nice what's the difference between one application that use web sockets to communicate with the back end and one application that use restful api's to do the same. So generally web sockets are used when you want to and.",
+      "text": " Nice what's the difference between one application that use web sockets to communicate with the back end and one application that use restful apis to do the same. So generally web sockets are used when you want to and.",
       "start": 1181.937,
-      "end": 1199.309,
+      "end": 1199.326,
       "id": 51,
       "speaker": "A"
     },
@@ -386,15 +386,15 @@
       "speaker": "A"
     },
     {
-      "text": " So GraphQL can be, I can describe or exemplify GraphQL by making some comparison with ETH and REST. So essentially GraphQL was introduced to augment some of the deficiencies of REST framework. So usually the RESTful framework endpoints are defined ahead of time, payloads that endpoints",
+      "text": " So GraphQL can be, I can describe or exemplify GraphQL by making some comparison with ETH and REST. So essentially GraphQL was introduced to augment some of the deficiencies of REST framework. So usually the RESTful framework endpoints are defined ahead of time, payloads that endpoint",
       "start": 1258.251,
-      "end": 1280.179,
+      "end": 1280.196,
       "id": 55,
       "speaker": "A"
     },
     {
-      "text": " return are defined ahead of time and the response the shape of the response from the rest to API defined ahead of time with minimal flexibility but with GraphQL you're provided an interface in which a client can query the server with very varied payload and can",
-      "start": 1280.179,
+      "text": " are defined ahead of time and the response, the shape of the response from the rest to API defined ahead of time with minimal flexibility. But with GraphQL, you're provided an interface in which a client can query the server with varied payload and can",
+      "start": 1280.196,
       "end": 1302.09,
       "id": 56,
       "speaker": "A"
@@ -423,13 +423,13 @@
     {
       "text": " And once you find them, so all you need to do is just create your account if you don't have one. OK, and pass through the vetting process once you pass. So you find a job as a victor as I did. OK. And then you start working one hundred percent remotely from the country that you want. OK. Any place in the world.",
       "start": 1367.483,
-      "end": 1390.094,
+      "end": 1390.111,
       "id": 60,
       "speaker": "A"
     },
     {
-      "text": " okay let's go let's just come back for victor but before that if you enjoy this content just consider give us the big fake thumbs up and comment down below uh what is your tech stack okay and what kind of job are you looking for okay so we're coming to the end okay i just have a few more questions for you um so uh how do you keep yourself up to date with node.js",
-      "start": 1390.094,
+      "text": " Okay, let's go. Let's just come back for Victor. But before that, if you enjoyed this content, just consider giving us the big thumbs up and commenting down below. What is your tech stack? Okay. And what kind of job are you looking for? Okay, Victor. So we're coming to the end. Okay. I just have a few more questions for you. So how do you keep yourself up to date with Node.js?",
+      "start": 1390.111,
       "end": 1418.541,
       "id": 61,
       "speaker": "A"
@@ -450,15 +450,15 @@
     },
     {
       "text": " And then finally, this might sound obvious, but I want to emphasize it. Just keep practicing, and especially targeted practice. Whenever I realize that I have some deficiencies or some struggles in a particular area of Node.js, I go to the Node.js documentation. I try to implement projects that would task my knowledge on such concepts. So over time, I get better at Node.js.",
-      "start": 1469.582,
-      "end": 1499.531,
+      "start": 1469.753,
+      "end": 1499.548,
       "id": 64,
       "speaker": "A"
     },
     {
-      "text": " And then there's always room for improvement in JavaScript, because even though Node.js is not exactly JavaScript, even though Node.js is more than JavaScript, getting stronger or better in JavaScript would definitely improve your skills in Node.js. So those are the few tips that I use to improve my Node.js and JavaScript in general. Thank you.",
-      "start": 1499.531,
-      "end": 1527.551,
+      "text": " And then there's always room for improvement in JavaScript, because even though Node.js is not exactly JavaScript, even though Node.js is more than JavaScript, but getting stronger or better in JavaScript would definitely improve your skills in Node.js. So those are a few tips that I use to improve my Node.js and JavaScript in general. Thank you.",
+      "start": 1499.548,
+      "end": 1527.534,
       "id": 65,
       "speaker": "A"
     },

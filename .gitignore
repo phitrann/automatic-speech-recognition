@@ -9,6 +9,7 @@ __pycache__/
 # Data, model and config files
 data/
 models/
+temp_outputs/
 config.py
 
 # Distribution / packaging

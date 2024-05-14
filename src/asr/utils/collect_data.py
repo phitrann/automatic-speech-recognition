@@ -29,7 +29,7 @@ YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
 
 RESUME_VIDEO_ID = (
-    "54AYOd5S7uo"  # resume downloading from this video, set empty string to start over
+    "zoEtcR5EW08"  # resume downloading from this video, set empty string to start over
 )
 
 
