@@ -49,20 +49,27 @@ In case `pytorch` cannot compiled with cuda, please run the following command
 ## Guidelines
 <!-- Youtube API is free, just have quota limit: https://github.com/ThioJoe/YT-Spammer-Purge/wiki/Understanding-YouTube-API-Quota-Limits -->
 
-### Collect data
+### Automatic Speech Recognition and Speaker Diarization
+- Please visit the notebook `task_1.ipynb`, run all cells to see the full pipeline for ASR and Speaker Diarization.
+
+### Pronunciation and Grammar Assessment
+- Currently, the system is in development and will be available soon. Code for this task is in the `task_2.ipynb` notebook.
+
+### CLI for Data Preparation
+- Collect
 ```bash
     python /src/asr/collect_data.py
 ```
-
-### Process data
+- Preprocess
 ```bash
     python /src/asr/parser.py
 ```
-
-### Clean up data
+- Clean up
 ```bash
     ./clean_up.sh
 ```
+
+
 
 ## References
 - https://github.com/youngwoo-yoon/youtube-gesture-dataset/blob/master/script/download_video.py
